@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using test.Code;
+using test.View;
 
 namespace test
 {
@@ -15,8 +16,9 @@ namespace test
     {
         public Form1()
         {
-            Class1 l= new Class1();
-            InitializeComponent();
+            formCreate t = new formCreate();
+            t.ShowDialog();
+            //InitializeComponent();
         }
         
 

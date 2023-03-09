@@ -63,7 +63,7 @@ namespace test.View
                 return true;//error
             }
         }
-        public void getData()
+        public void getData()//lấy excel đưa vào dataTable
         {
             if (linkFile != "")
             {
@@ -88,44 +88,44 @@ namespace test.View
         }
         public void CreateDataToExcel(string nameFile)
         {
-            //SaveFileDialog eF = new SaveFileDialog();
-            //eF.Filter = "Excel Documents (*.xlsx)|*.xlsx";
-            //eF.FileName = "export1.xlsx";
+            //nạp lại dữ liệu
+            dt = new DataTable(); //Tạo một DataTable mới để lưu trữ dữ liệu.
+            dt.Columns.Add("ID");
+            dt.Columns.Add("CONTENT");
+            dt.Columns.Add("ANSWER1");
+            dt.Columns.Add("ANSWER2");
+            dt.Columns.Add("ANSWER3");
+            dt.Columns.Add("ANSWER4");
+            dt.Columns.Add("CORRECT_ANSWER");
+            getData();
 
-            //if (eF.ShowDialog() == DialogResult.OK)
-            //{
-                // Create the Excel package
-                ExcelPackage pck = new ExcelPackage();
+            string newLinkFile = Application.StartupPath + @"\\Resources\\" + nameFile + ".xlsx";
+            // Create the Excel package
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            ExcelPackage pck = new ExcelPackage();
 
-                // Create the worksheet
-                ExcelWorksheet worksheet = pck.Workbook.Worksheets.Add("Sheet1");
-
-                // duyệt các tên cột(header) vào excel
-                for (int i = 0; i < questionsDtgv.Columns.Count; i++)
+            // Create the worksheet
+            ExcelWorksheet worksheet = pck.Workbook.Worksheets.Add("Sheet1");
+            //
+            for (int i = 0; i < dt.Columns.Count; i++)
+            {
+                worksheet.Cells[1, i + 1].Value = dt.Columns[i];//Thuộc tính này lấy hoặc đặt giá trị văn bản (text) của header của cột đó.
+            }
+            // duyệt các row trừ tiêu đề(header) đã duyệt ở trên
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                for (int j = 0; j < dt.Columns.Count; j++)
                 {
-                util.ShowMessageBox(questionsDtgv.Columns[i].HeaderText.ToString());
-                    worksheet.Cells[1, i + 1].Value = questionsDtgv.Columns[i].HeaderText;//Thuộc tính này lấy hoặc đặt giá trị văn bản (text) của header của cột đó.
+                    worksheet.Cells[i + 2, j + 1].Value = dt.Rows[i][j];
                 }
-                // duyệt các row trừ tiêu đề(header) đã duyệt ở trên
-                for (int i = 0; i < questionsDtgv.Rows.Count; i++)
-                {
-                    for (int j = 0; j < questionsDtgv.Columns.Count; j++)
-                    {
-                    MessageBox.Show(questionsDtgv.Rows[i].Cells[j].Value.ToString());
-                    worksheet.Cells[i + 2, j + 1].Value = questionsDtgv.Rows[i].Cells[j].Value.ToString();
-                    }
-                }
-                // Save the file
-                pck.SaveAs(new FileInfo(Application.StartupPath + @"\\Resources\\" + nameFile+".xlsx"));
-                MessageBox.Show("Exported successfully!", "Message");
-            //}
+            }
+            //Create Find & Save
+            pck.SaveAs(new FileInfo(newLinkFile));
         }
         private void btCreate_Click(object sender, EventArgs e)
         {
-            if (validateFieldId())//nếu lỗi thì break;
-            {
-                return;
-            }
+            if (validateFieldId()) return;//nếu lỗi thì break;
+                
             if (idAns.Text != "" && content.Text != "" && ans1.Text != "" && ans2.Text != "" && ans3.Text != "" && ans3.Text != "" )
             {
                 dt.Rows.Add(idQuestion.Text, content.Text, ans1.Text,ans2.Text , ans3.Text, ans4.Text, idAns.Text);
@@ -142,14 +142,10 @@ namespace test.View
                     int rowCount = worksheet.Dimension.Rows;//số lượng dòng trong bảng tính 
                     //Cells[row,col]
                     //row[nameCol] hiểu là lấy giá trị của nameCol current gán cho row vị trí vế phải
-                    worksheet.Cells[rowCount + 1, 1].Value = dt.Rows[rowCount - 1]["ID"];//ô đầu tiên dòng tiếp theo
-                    worksheet.Cells[rowCount + 1, 2].Value = dt.Rows[rowCount - 1]["CONTENT"];//ô thứ 2
-                    worksheet.Cells[rowCount + 1, 3].Value = dt.Rows[rowCount - 1]["ANSWER1"];//ô thứ 3
-                    worksheet.Cells[rowCount + 1, 4].Value = dt.Rows[rowCount - 1]["ANSWER2"];
-                    worksheet.Cells[rowCount + 1, 5].Value = dt.Rows[rowCount - 1]["ANSWER3"];
-                    worksheet.Cells[rowCount + 1, 6].Value = dt.Rows[rowCount - 1]["ANSWER4"];
-                    worksheet.Cells[rowCount + 1, 7].Value = dt.Rows[rowCount - 1]["CORRECT_ANSWER"];
-
+                    for(int i = 0; i < dt.Columns.Count; i++)
+                    {
+                        worksheet.Cells[rowCount + 1, i+1].Value = dt.Rows[rowCount - 1][i];
+                    }
                     package.Save();// Lưu tệp Excel
                 }
             }

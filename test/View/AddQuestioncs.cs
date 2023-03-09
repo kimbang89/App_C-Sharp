@@ -7,21 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using test.Code;
-using test.View;
 
-namespace test
+namespace test.View
 {
-    public partial class Form1 : Form
+    public partial class AddQuestioncs : Form
     {
-        public Form1()
+        public AddQuestioncs()
         {
-            formCreate t = new formCreate();
-            t.ShowDialog();
-       
-            //InitializeComponent();
+            InitializeComponent();
         }
-        
-
     }
 }

@@ -29,38 +29,38 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCreate));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label9 = new System.Windows.Forms.Label();
-            this.IdAns = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.idAns = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btCreate = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.IdQuestion = new Guna.UI2.WinForms.Guna2TextBox();
+            this.idQuestion = new Guna.UI2.WinForms.Guna2TextBox();
             this.btUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btExit = new Guna.UI2.WinForms.Guna2Button();
-            this.Ans1 = new System.Windows.Forms.RichTextBox();
+            this.ans1 = new System.Windows.Forms.RichTextBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.content = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.Ans2 = new System.Windows.Forms.RichTextBox();
+            this.ans2 = new System.Windows.Forms.RichTextBox();
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.Ans3 = new System.Windows.Forms.RichTextBox();
+            this.ans3 = new System.Windows.Forms.RichTextBox();
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.Ans4 = new System.Windows.Forms.RichTextBox();
-            this.QuestionsDtgv = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ans4 = new System.Windows.Forms.RichTextBox();
+            this.questionsDtgv = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.QuestionsDtgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionsDtgv)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -77,29 +77,29 @@
             this.label9.Text = "CREATE A NEW TEST";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // IdAns
+            // idAns
             // 
-            this.IdAns.BackColor = System.Drawing.Color.Transparent;
-            this.IdAns.BorderRadius = 8;
-            this.IdAns.BorderThickness = 0;
-            this.IdAns.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.IdAns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IdAns.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.IdAns.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.IdAns.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.IdAns.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(79)))), ((int)(((byte)(134)))));
-            this.IdAns.ItemHeight = 18;
-            this.IdAns.Items.AddRange(new object[] {
+            this.idAns.BackColor = System.Drawing.Color.Transparent;
+            this.idAns.BorderRadius = 8;
+            this.idAns.BorderThickness = 0;
+            this.idAns.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.idAns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.idAns.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.idAns.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.idAns.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.idAns.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(79)))), ((int)(((byte)(134)))));
+            this.idAns.ItemHeight = 18;
+            this.idAns.Items.AddRange(new object[] {
             "A",
             "B",
             "C",
             "D"});
-            this.IdAns.Location = new System.Drawing.Point(194, 382);
-            this.IdAns.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.IdAns.Name = "IdAns";
-            this.IdAns.Size = new System.Drawing.Size(87, 24);
-            this.IdAns.TabIndex = 57;
-            this.IdAns.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.idAns.Location = new System.Drawing.Point(194, 382);
+            this.idAns.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.idAns.Name = "idAns";
+            this.idAns.Size = new System.Drawing.Size(87, 24);
+            this.idAns.TabIndex = 57;
+            this.idAns.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btCreate
             // 
@@ -117,7 +117,7 @@
             this.btCreate.Size = new System.Drawing.Size(148, 39);
             this.btCreate.TabIndex = 60;
             this.btCreate.Text = "Create";
-            this.btCreate.Click += new System.EventHandler(this.SaveButton_Click);
+            this.btCreate.Click += new System.EventHandler(this.btCreate_Click);
             // 
             // label8
             // 
@@ -143,33 +143,32 @@
             this.label4.TabIndex = 63;
             this.label4.Text = "Answer ";
             // 
-            // IdQuestion
+            // idQuestion
             // 
-            this.IdQuestion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
-            this.IdQuestion.BorderRadius = 8;
-            this.IdQuestion.BorderThickness = 0;
-            this.IdQuestion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.IdQuestion.DefaultText = "";
-            this.IdQuestion.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.IdQuestion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.IdQuestion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.IdQuestion.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.IdQuestion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.IdQuestion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(79)))), ((int)(((byte)(134)))));
-            this.IdQuestion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.IdQuestion.IconLeftSize = new System.Drawing.Size(0, 0);
-            this.IdQuestion.IconRight = ((System.Drawing.Image)(resources.GetObject("IdQuestion.IconRight")));
-            this.IdQuestion.IconRightOffset = new System.Drawing.Point(5, 0);
-            this.IdQuestion.IconRightSize = new System.Drawing.Size(7, 7);
-            this.IdQuestion.Location = new System.Drawing.Point(194, 82);
-            this.IdQuestion.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.IdQuestion.Name = "IdQuestion";
-            this.IdQuestion.PasswordChar = '\0';
-            this.IdQuestion.PlaceholderText = "";
-            this.IdQuestion.SelectedText = "";
-            this.IdQuestion.Size = new System.Drawing.Size(87, 30);
-            this.IdQuestion.TabIndex = 53;
+            this.idQuestion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
+            this.idQuestion.BorderRadius = 8;
+            this.idQuestion.BorderThickness = 0;
+            this.idQuestion.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.idQuestion.DefaultText = "";
+            this.idQuestion.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.idQuestion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.idQuestion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.idQuestion.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.idQuestion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.idQuestion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(79)))), ((int)(((byte)(134)))));
+            this.idQuestion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.idQuestion.IconLeftSize = new System.Drawing.Size(0, 0);
+            this.idQuestion.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.idQuestion.IconRightSize = new System.Drawing.Size(7, 7);
+            this.idQuestion.Location = new System.Drawing.Point(194, 82);
+            this.idQuestion.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.idQuestion.Name = "idQuestion";
+            this.idQuestion.PasswordChar = '\0';
+            this.idQuestion.PlaceholderText = "";
+            this.idQuestion.SelectedText = "";
+            this.idQuestion.Size = new System.Drawing.Size(87, 30);
+            this.idQuestion.TabIndex = 53;
             // 
             // btUpdate
             // 
@@ -188,6 +187,7 @@
             this.btUpdate.Size = new System.Drawing.Size(148, 39);
             this.btUpdate.TabIndex = 60;
             this.btUpdate.Text = "Update";
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // btDelete
             // 
@@ -205,6 +205,7 @@
             this.btDelete.Size = new System.Drawing.Size(148, 39);
             this.btDelete.TabIndex = 60;
             this.btDelete.Text = "Delete";
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btExit
             // 
@@ -222,20 +223,22 @@
             this.btExit.Size = new System.Drawing.Size(148, 39);
             this.btExit.TabIndex = 60;
             this.btExit.Text = "Exit";
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
-            // Ans1
+            // ans1
             // 
-            this.Ans1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Ans1.Location = new System.Drawing.Point(895, 89);
-            this.Ans1.Name = "Ans1";
-            this.Ans1.Size = new System.Drawing.Size(532, 72);
-            this.Ans1.TabIndex = 70;
-            this.Ans1.Text = "";
+            this.ans1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ans1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ans1.Location = new System.Drawing.Point(895, 89);
+            this.ans1.Name = "ans1";
+            this.ans1.Size = new System.Drawing.Size(532, 72);
+            this.ans1.TabIndex = 70;
+            this.ans1.Text = "";
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 10;
-            this.guna2Elipse1.TargetControl = this.Ans1;
+            this.guna2Elipse1.TargetControl = this.ans1;
             // 
             // label1
             // 
@@ -252,6 +255,7 @@
             // content
             // 
             this.content.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.content.Location = new System.Drawing.Point(194, 132);
             this.content.Name = "content";
             this.content.Size = new System.Drawing.Size(526, 234);
@@ -266,9 +270,9 @@
             this.label2.Location = new System.Drawing.Point(767, 89);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 23);
+            this.label2.Size = new System.Drawing.Size(102, 23);
             this.label2.TabIndex = 66;
-            this.label2.Text = "Answer B";
+            this.label2.Text = "Answer A";
             // 
             // guna2Elipse2
             // 
@@ -278,106 +282,110 @@
             // guna2Elipse3
             // 
             this.guna2Elipse3.BorderRadius = 10;
-            this.guna2Elipse3.TargetControl = this.Ans2;
+            this.guna2Elipse3.TargetControl = this.ans2;
             // 
-            // Ans2
+            // ans2
             // 
-            this.Ans2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Ans2.Location = new System.Drawing.Point(895, 188);
-            this.Ans2.Name = "Ans2";
-            this.Ans2.Size = new System.Drawing.Size(532, 72);
-            this.Ans2.TabIndex = 70;
-            this.Ans2.Text = "";
+            this.ans2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ans2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ans2.Location = new System.Drawing.Point(895, 188);
+            this.ans2.Name = "ans2";
+            this.ans2.Size = new System.Drawing.Size(532, 72);
+            this.ans2.TabIndex = 70;
+            this.ans2.Text = "";
             // 
             // guna2Elipse4
             // 
             this.guna2Elipse4.BorderRadius = 10;
-            this.guna2Elipse4.TargetControl = this.Ans3;
+            this.guna2Elipse4.TargetControl = this.ans3;
             // 
-            // Ans3
+            // ans3
             // 
-            this.Ans3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Ans3.Location = new System.Drawing.Point(895, 284);
-            this.Ans3.Name = "Ans3";
-            this.Ans3.Size = new System.Drawing.Size(532, 72);
-            this.Ans3.TabIndex = 70;
-            this.Ans3.Text = "";
+            this.ans3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ans3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ans3.Location = new System.Drawing.Point(895, 284);
+            this.ans3.Name = "ans3";
+            this.ans3.Size = new System.Drawing.Size(532, 72);
+            this.ans3.TabIndex = 70;
+            this.ans3.Text = "";
             // 
             // guna2Elipse5
             // 
             this.guna2Elipse5.BorderRadius = 10;
-            this.guna2Elipse5.TargetControl = this.Ans4;
+            this.guna2Elipse5.TargetControl = this.ans4;
             // 
-            // Ans4
+            // ans4
             // 
-            this.Ans4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Ans4.Location = new System.Drawing.Point(895, 382);
-            this.Ans4.Name = "Ans4";
-            this.Ans4.Size = new System.Drawing.Size(532, 72);
-            this.Ans4.TabIndex = 70;
-            this.Ans4.Text = "";
+            this.ans4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ans4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ans4.Location = new System.Drawing.Point(895, 382);
+            this.ans4.Name = "ans4";
+            this.ans4.Size = new System.Drawing.Size(532, 72);
+            this.ans4.TabIndex = 70;
+            this.ans4.Text = "";
             // 
-            // QuestionsDtgv
+            // questionsDtgv
             // 
-            this.QuestionsDtgv.AllowUserToAddRows = false;
-            this.QuestionsDtgv.AllowUserToDeleteRows = false;
-            this.QuestionsDtgv.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.QuestionsDtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(161)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(161)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.QuestionsDtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.QuestionsDtgv.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(134)))), ((int)(((byte)(183)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.QuestionsDtgv.DefaultCellStyle = dataGridViewCellStyle6;
-            this.QuestionsDtgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.QuestionsDtgv.Location = new System.Drawing.Point(12, 519);
-            this.QuestionsDtgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.QuestionsDtgv.Name = "QuestionsDtgv";
-            this.QuestionsDtgv.ReadOnly = true;
-            this.QuestionsDtgv.RowHeadersVisible = false;
-            this.QuestionsDtgv.RowHeadersWidth = 62;
-            this.QuestionsDtgv.RowTemplate.Height = 28;
-            this.QuestionsDtgv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.QuestionsDtgv.Size = new System.Drawing.Size(1458, 312);
-            this.QuestionsDtgv.TabIndex = 78;
-            this.QuestionsDtgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.QuestionsDtgv.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.QuestionsDtgv.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.QuestionsDtgv.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.QuestionsDtgv.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.QuestionsDtgv.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.QuestionsDtgv.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.QuestionsDtgv.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.QuestionsDtgv.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.QuestionsDtgv.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.QuestionsDtgv.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.QuestionsDtgv.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.QuestionsDtgv.ThemeStyle.HeaderStyle.Height = 30;
-            this.QuestionsDtgv.ThemeStyle.ReadOnly = true;
-            this.QuestionsDtgv.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.QuestionsDtgv.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.QuestionsDtgv.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.QuestionsDtgv.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.QuestionsDtgv.ThemeStyle.RowsStyle.Height = 28;
-            this.QuestionsDtgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.QuestionsDtgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.questionsDtgv.AllowUserToAddRows = false;
+            this.questionsDtgv.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.questionsDtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(161)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(161)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.questionsDtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.questionsDtgv.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(134)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.questionsDtgv.DefaultCellStyle = dataGridViewCellStyle3;
+            this.questionsDtgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.questionsDtgv.Location = new System.Drawing.Point(12, 519);
+            this.questionsDtgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.questionsDtgv.Name = "questionsDtgv";
+            this.questionsDtgv.ReadOnly = true;
+            this.questionsDtgv.RowHeadersVisible = false;
+            this.questionsDtgv.RowHeadersWidth = 62;
+            this.questionsDtgv.RowTemplate.Height = 28;
+            this.questionsDtgv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.questionsDtgv.Size = new System.Drawing.Size(1458, 312);
+            this.questionsDtgv.TabIndex = 78;
+            this.questionsDtgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.questionsDtgv.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.questionsDtgv.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.questionsDtgv.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.questionsDtgv.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.questionsDtgv.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.questionsDtgv.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.questionsDtgv.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.questionsDtgv.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.questionsDtgv.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.questionsDtgv.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.questionsDtgv.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.questionsDtgv.ThemeStyle.HeaderStyle.Height = 30;
+            this.questionsDtgv.ThemeStyle.ReadOnly = true;
+            this.questionsDtgv.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.questionsDtgv.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.questionsDtgv.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.questionsDtgv.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.questionsDtgv.ThemeStyle.RowsStyle.Height = 28;
+            this.questionsDtgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.questionsDtgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.questionsDtgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.questionsDtgv_CellClick);
+            this.questionsDtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.questionsDtgv_CellContentClick);
             // 
             // guna2Elipse6
             // 
             this.guna2Elipse6.BorderRadius = 10;
-            this.guna2Elipse6.TargetControl = this.QuestionsDtgv;
+            this.guna2Elipse6.TargetControl = this.questionsDtgv;
             // 
             // label3
             // 
@@ -399,9 +407,9 @@
             this.label5.Location = new System.Drawing.Point(767, 284);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 23);
+            this.label5.Size = new System.Drawing.Size(103, 23);
             this.label5.TabIndex = 66;
-            this.label5.Text = "Answer B";
+            this.label5.Text = "Answer C";
             // 
             // label6
             // 
@@ -411,9 +419,9 @@
             this.label6.Location = new System.Drawing.Point(767, 382);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 23);
+            this.label6.Size = new System.Drawing.Size(101, 23);
             this.label6.TabIndex = 66;
-            this.label6.Text = "Answer B";
+            this.label6.Text = "Answer D";
             // 
             // guna2Elipse7
             // 
@@ -427,14 +435,14 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.ClientSize = new System.Drawing.Size(1482, 853);
-            this.Controls.Add(this.QuestionsDtgv);
+            this.Controls.Add(this.questionsDtgv);
             this.Controls.Add(this.content);
-            this.Controls.Add(this.Ans4);
-            this.Controls.Add(this.Ans3);
-            this.Controls.Add(this.Ans2);
-            this.Controls.Add(this.Ans1);
+            this.Controls.Add(this.ans4);
+            this.Controls.Add(this.ans3);
+            this.Controls.Add(this.ans2);
+            this.Controls.Add(this.ans1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.IdAns);
+            this.Controls.Add(this.idAns);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.label6);
@@ -446,13 +454,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.IdQuestion);
+            this.Controls.Add(this.idQuestion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "formCreate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateQuiz";
             this.Load += new System.EventHandler(this.formCreate_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.QuestionsDtgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionsDtgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,15 +469,15 @@
 
         #endregion
         private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2ComboBox IdAns;
+        private Guna.UI2.WinForms.Guna2ComboBox idAns;
         private Guna.UI2.WinForms.Guna2Button btCreate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox IdQuestion;
+        private Guna.UI2.WinForms.Guna2TextBox idQuestion;
         private Guna.UI2.WinForms.Guna2Button btUpdate;
         private Guna.UI2.WinForms.Guna2Button btDelete;
         private Guna.UI2.WinForms.Guna2Button btExit;
-        private System.Windows.Forms.RichTextBox Ans1;
+        private System.Windows.Forms.RichTextBox ans1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox content;
@@ -477,14 +486,14 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
-        private Guna.UI2.WinForms.Guna2DataGridView QuestionsDtgv;
+        private Guna.UI2.WinForms.Guna2DataGridView questionsDtgv;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox Ans2;
+        private System.Windows.Forms.RichTextBox ans2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox Ans3;
+        private System.Windows.Forms.RichTextBox ans3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox Ans4;
+        private System.Windows.Forms.RichTextBox ans4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
     }
 }

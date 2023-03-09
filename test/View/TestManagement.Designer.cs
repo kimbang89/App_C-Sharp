@@ -41,7 +41,7 @@
             this.idQuestion = new Guna.UI2.WinForms.Guna2TextBox();
             this.btUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.btExit = new Guna.UI2.WinForms.Guna2Button();
+            this.btExport = new Guna.UI2.WinForms.Guna2Button();
             this.ans1 = new System.Windows.Forms.RichTextBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -59,7 +59,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse8 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2Elipse9 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2Elipse10 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse11 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             ((System.ComponentModel.ISupportInitialize)(this.questionsDtgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,23 +214,23 @@
             this.btDelete.Text = "Delete";
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
-            // btExit
+            // btExport
             // 
-            this.btExit.BorderRadius = 9;
-            this.btExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(255)))), ((int)(((byte)(243)))));
-            this.btExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(125)))), ((int)(((byte)(160)))));
-            this.btExit.Location = new System.Drawing.Point(732, 459);
-            this.btExit.Margin = new System.Windows.Forms.Padding(4);
-            this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(148, 39);
-            this.btExit.TabIndex = 60;
-            this.btExit.Text = "Exit";
-            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            this.btExport.BorderRadius = 9;
+            this.btExport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btExport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btExport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btExport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btExport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(255)))), ((int)(((byte)(243)))));
+            this.btExport.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(125)))), ((int)(((byte)(160)))));
+            this.btExport.Location = new System.Drawing.Point(718, 459);
+            this.btExport.Margin = new System.Windows.Forms.Padding(4);
+            this.btExport.Name = "btExport";
+            this.btExport.Size = new System.Drawing.Size(181, 39);
+            this.btExport.TabIndex = 60;
+            this.btExport.Text = "Export To Excel";
+            this.btExport.Click += new System.EventHandler(this.btExport_Click);
             // 
             // ans1
             // 
@@ -380,7 +387,6 @@
             this.questionsDtgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.questionsDtgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.questionsDtgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.questionsDtgv_CellClick);
-            this.questionsDtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.questionsDtgv_CellContentClick);
             // 
             // guna2Elipse6
             // 
@@ -423,9 +429,69 @@
             this.label6.TabIndex = 66;
             this.label6.Text = "Answer D";
             // 
-            // guna2Elipse7
+            // guna2Elipse8
             // 
-            this.guna2Elipse7.BorderRadius = 19;
+            this.guna2Elipse8.BorderRadius = 10;
+            this.guna2Elipse8.TargetControl = this.guna2ShadowPanel1;
+            // 
+            // guna2ShadowPanel3
+            // 
+            this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel3.Location = new System.Drawing.Point(905, 204);
+            this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
+            this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel3.ShadowShift = 40;
+            this.guna2ShadowPanel3.Size = new System.Drawing.Size(532, 65);
+            this.guna2ShadowPanel3.TabIndex = 81;
+            // 
+            // guna2Elipse9
+            // 
+            this.guna2Elipse9.BorderRadius = 10;
+            this.guna2Elipse9.TargetControl = this.guna2ShadowPanel3;
+            // 
+            // guna2ShadowPanel2
+            // 
+            this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel2.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(905, 398);
+            this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
+            this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel2.ShadowShift = 40;
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(532, 65);
+            this.guna2ShadowPanel2.TabIndex = 82;
+            // 
+            // guna2ShadowPanel4
+            // 
+            this.guna2ShadowPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel4.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel4.Location = new System.Drawing.Point(905, 301);
+            this.guna2ShadowPanel4.Name = "guna2ShadowPanel4";
+            this.guna2ShadowPanel4.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel4.ShadowShift = 40;
+            this.guna2ShadowPanel4.Size = new System.Drawing.Size(532, 65);
+            this.guna2ShadowPanel4.TabIndex = 82;
+            // 
+            // guna2Elipse10
+            // 
+            this.guna2Elipse10.BorderRadius = 10;
+            this.guna2Elipse10.TargetControl = this.guna2ShadowPanel4;
+            // 
+            // guna2Elipse11
+            // 
+            this.guna2Elipse11.BorderRadius = 10;
+            this.guna2Elipse11.TargetControl = this.guna2ShadowPanel2;
+            // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(905, 105);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.ShadowShift = 40;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(532, 65);
+            this.guna2ShadowPanel1.TabIndex = 83;
             // 
             // formCreate
             // 
@@ -440,10 +506,9 @@
             this.Controls.Add(this.ans4);
             this.Controls.Add(this.ans3);
             this.Controls.Add(this.ans2);
-            this.Controls.Add(this.ans1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.idAns);
-            this.Controls.Add(this.btExit);
+            this.Controls.Add(this.btExport);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btUpdate);
@@ -455,6 +520,11 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.idQuestion);
+            this.Controls.Add(this.ans1);
+            this.Controls.Add(this.guna2ShadowPanel3);
+            this.Controls.Add(this.guna2ShadowPanel4);
+            this.Controls.Add(this.guna2ShadowPanel2);
+            this.Controls.Add(this.guna2ShadowPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "formCreate";
@@ -476,7 +546,7 @@
         private Guna.UI2.WinForms.Guna2TextBox idQuestion;
         private Guna.UI2.WinForms.Guna2Button btUpdate;
         private Guna.UI2.WinForms.Guna2Button btDelete;
-        private Guna.UI2.WinForms.Guna2Button btExit;
+        private Guna.UI2.WinForms.Guna2Button btExport;
         private System.Windows.Forms.RichTextBox ans1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Label label1;
@@ -494,6 +564,13 @@
         private System.Windows.Forms.RichTextBox ans3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox ans4;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse8;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse9;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel4;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse10;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse11;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
     }
 }

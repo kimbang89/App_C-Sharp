@@ -28,12 +28,25 @@ namespace test.View
         {
             InitializeComponent();
         }
+        private void formCreate_Load(object sender, EventArgs e)
+        {
+            content.Focus();
+            dt = new DataTable(); //Tạo một DataTable mới để lưu trữ dữ liệu.
+            dt.Columns.Add("ID");
+            dt.Columns.Add("CONTENT");
+            dt.Columns.Add("ANSWER1");
+            dt.Columns.Add("ANSWER2");
+            dt.Columns.Add("ANSWER3");
+            dt.Columns.Add("ANSWER4");
+            dt.Columns.Add("CORRECT_ANSWER");
+            idAns.SelectedIndex = 0;//mặc định chọn Id Answer là A
+            getData();
+        }
         //đưa file ngoài vào quản lý
         public formCreate(string linkFile)
         {
             this.linkFile=linkFile;
         }
-      
         public bool validateFieldId()
         {
             try
@@ -49,20 +62,6 @@ namespace test.View
                 idQuestion.Focus();
                 return true;//error
             }
-        }
-        private void formCreate_Load(object sender, EventArgs e)
-        {
-            content.Focus();
-            dt = new DataTable(); //Tạo một DataTable mới để lưu trữ dữ liệu.
-            dt.Columns.Add("ID");
-            dt.Columns.Add("CONTENT");
-            dt.Columns.Add("ANSWER1");
-            dt.Columns.Add("ANSWER2");
-            dt.Columns.Add("ANSWER3");
-            dt.Columns.Add("ANSWER4");
-            dt.Columns.Add("CORRECT_ANSWER");
-            idAns.SelectedIndex = 0;//mặc định chọn Id Answer là A
-            getData();
         }
         public void getData()
         {
@@ -86,6 +85,40 @@ namespace test.View
                     questionsDtgv.DataSource = dt;// Gán dữ liệu từ DataTable cho DataSource của DataGridView để hiển thị lên giao diện.
                 }
             }
+        }
+        public void CreateDataToExcel(string nameFile)
+        {
+            //SaveFileDialog eF = new SaveFileDialog();
+            //eF.Filter = "Excel Documents (*.xlsx)|*.xlsx";
+            //eF.FileName = "export1.xlsx";
+
+            //if (eF.ShowDialog() == DialogResult.OK)
+            //{
+                // Create the Excel package
+                ExcelPackage pck = new ExcelPackage();
+
+                // Create the worksheet
+                ExcelWorksheet worksheet = pck.Workbook.Worksheets.Add("Sheet1");
+
+                // duyệt các tên cột(header) vào excel
+                for (int i = 0; i < questionsDtgv.Columns.Count; i++)
+                {
+                util.ShowMessageBox(questionsDtgv.Columns[i].HeaderText.ToString());
+                    worksheet.Cells[1, i + 1].Value = questionsDtgv.Columns[i].HeaderText;//Thuộc tính này lấy hoặc đặt giá trị văn bản (text) của header của cột đó.
+                }
+                // duyệt các row trừ tiêu đề(header) đã duyệt ở trên
+                for (int i = 0; i < questionsDtgv.Rows.Count; i++)
+                {
+                    for (int j = 0; j < questionsDtgv.Columns.Count; j++)
+                    {
+                    MessageBox.Show(questionsDtgv.Rows[i].Cells[j].Value.ToString());
+                    worksheet.Cells[i + 2, j + 1].Value = questionsDtgv.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                // Save the file
+                pck.SaveAs(new FileInfo(Application.StartupPath + @"\\Resources\\" + nameFile+".xlsx"));
+                MessageBox.Show("Exported successfully!", "Message");
+            //}
         }
         private void btCreate_Click(object sender, EventArgs e)
         {
@@ -168,7 +201,6 @@ namespace test.View
                 package.Save();
             }
         }
-
         private void btDelete_Click(object sender, EventArgs e)
         {
             // Mở tệp Excel
@@ -182,17 +214,11 @@ namespace test.View
                 package.Save();//lưu để tránh rò rỉ dữ liệu  
             }
         }
-
-        private void btExit_Click(object sender, EventArgs e)
+        
+        private void btExport_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ExportFile formEF= new ExportFile();    
+            formEF.ShowDialog();
         }
-
-        private void questionsDtgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
-       
     }
 }

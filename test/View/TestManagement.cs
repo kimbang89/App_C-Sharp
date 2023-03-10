@@ -216,5 +216,10 @@ namespace test.View
             ExportFile formEF= new ExportFile();    
             formEF.ShowDialog();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

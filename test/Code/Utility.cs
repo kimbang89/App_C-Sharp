@@ -13,5 +13,14 @@ namespace test.Code
         {
             MessageBox.Show(message, "Error", MessageBoxButtons.OKCancel);
         }
+        public bool ValidateEmpty(string textBoxEmpty,string message)
+        {
+            if (textBoxEmpty == "")
+            {
+                ShowMessageBox("Please enter a "+message);
+                return true;
+            }
+            return false;
+        }
     }
 }

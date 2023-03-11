@@ -14,6 +14,13 @@ namespace test
 {
     public partial class Login : Form
     {
+        //dùng biến tĩnh để sữ dụng ở những form khác
+        private static string role;
+        public string Role
+        {
+            get { return role; }
+            set { role = value; }
+        }
         public Login()
         {
             InitializeComponent();
@@ -29,24 +36,13 @@ namespace test
             //if (util.ValidateEmpty(tbUserName.Text, "UserName") || util.ValidateEmpty(tbPassWord.Text, "Password"))
             //    return;
 
-            if (Application.OpenForms.Count < 1) // Nếu còn form khác đang mở
-            {
-                this.Close();
-                    
-            }
-                // Thực hiện ẩn form hiện tại
-                this.Hide();//Ẩn form nếu Close sẽ tắt cả CT
-                Main main = new Main();
-                main.ShowDialog();
+            role=tbUserName.Text;
+            // Thực hiện ẩn form hiện tại
+            this.Hide();//Ẩn form nếu Close sẽ tắt cả CT
+            Main main = new Main();
+            main.ShowDialog();
     
         }
-        private void Application_Idle(object sender, EventArgs e)
-        {
-            // Huỷ đăng ký sự kiện Application.Idle
-            Application.Idle -= Application_Idle;// Sự kiện xảy ra khi ứng dụng rảnh (idle).
 
-            // Tắt chương trình
-            Application.Exit();
-        }
     }
 }

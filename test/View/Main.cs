@@ -36,10 +36,16 @@ namespace test.View
                 ListViewItem parentItem = new ListViewItem(Path.GetFileNameWithoutExtension(files[i]), i);
                 listTests.Items.Add(parentItem);
             }
+            //phân quuyền admin user
+            //Login login = new Login();
+            //if (login.Role != "admin")
+            //{
+            //    btCreateTest.Visible = false;
+            //    btEditTest.Visible = false;
+            //}
         }
         public void LoadImageList()
         {
-
             // Lấy đường dẫn của thư mục đã chọn
             string path = Application.StartupPath + @"\\Resources\\";
             // Lấy danh sách các file Excel trong thư mục
@@ -53,24 +59,46 @@ namespace test.View
             {
                 img.Images.Add(new Bitmap(Application.StartupPath + "\\image\\test.jpg"));
             }
-
             listTests.LargeImageList = img;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+        private void listTests_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btStartTest.FillColor = ColorTranslator.FromHtml("#0093E9");
+            btStartTest.FillColor2 = ColorTranslator.FromHtml("#80D0C7");
+            btEditTest.FillColor2 = ColorTranslator.FromHtml("#0093E9");
+            btEditTest.FillColor = ColorTranslator.FromHtml("#80D0C7");
+        }
+        private void btEditTest_Click(object sender, EventArgs e)
+        {
+            //nếu chưa select file thì validate
+            if (listTests.SelectedItems.Count < 1)
+            {
+                MessageBox.Show("Please select the file you want to edit!");
+                return;
+            }
+            this.Hide();//vì không cần dữ liệu form nên dùng Close
+            string nameFile= listTests.SelectedItems[0].Text;
+
+            formCreate formCreate = new formCreate();
+            formCreate.LinkFile=nameFile;
+            formCreate.ShowDialog();
         }
         private void btCreateTest_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formCreate formCreate = new formCreate();
+
+            ExportFile exportFile= new ExportFile();
+            exportFile.ShowDialog();
+
+            formCreate formCreate = new formCreate();//issues
             formCreate.ShowDialog();
         }
-
-        private void listTests_SelectedIndexChanged(object sender, EventArgs e)
+        private void btStartTest_Click(object sender, EventArgs e)
         {
-            btStartTest.FillColor = ColorTranslator.FromHtml("#ff0080");
-            btStartTest.FillColor2 = ColorTranslator.FromHtml("#0080ff");
 
         }
     }

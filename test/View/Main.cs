@@ -67,17 +67,48 @@ namespace test.View
         }
         private void listTests_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btStartTest.FillColor = ColorTranslator.FromHtml("#0093E9");
-            btStartTest.FillColor2 = ColorTranslator.FromHtml("#80D0C7");
-            btEditTest.FillColor2 = ColorTranslator.FromHtml("#0093E9");
-            btEditTest.FillColor = ColorTranslator.FromHtml("#80D0C7");
+            btStartTest.FillColor = ColorTranslator.FromHtml("#B721FF");
+            btStartTest.FillColor2 = ColorTranslator.FromHtml("#21D4FD");
+
+            btEditTest.FillColor2 = ColorTranslator.FromHtml("#FFCC70");
+            btEditTest.FillColor = ColorTranslator.FromHtml("#C850C0");
+
+            btDelete.FillColor2 = ColorTranslator.FromHtml("#FF2525");
+            btDelete.FillColor = ColorTranslator.FromHtml("#FFE53B"); 
+
+            btCreateTest.FillColor2 = ColorTranslator.FromHtml("#2BFF88");
+            btCreateTest.FillColor = ColorTranslator.FromHtml("#2BD2FF"); 
+        }
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            if (listTests.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select the file you want to delete!");
+                return;
+            }
+            ListViewItem itemSelected = listTests.SelectedItems[0];
+            if (itemSelected.Text == "")
+            {
+                MessageBox.Show("Please select the file you want to delete!");
+                return;
+            }
+            string filePath = Application.StartupPath + @"\\Resources\\" + itemSelected.Text+".xlsx";
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+                listTests.Items.Remove(itemSelected);
+            }
+            else
+            {
+                MessageBox.Show("The selected file does not exist!");
+            }
         }
         private void btEditTest_Click(object sender, EventArgs e)
         {
             //nếu chưa select file thì validate
             if (listTests.SelectedItems.Count < 1)
             {
-                MessageBox.Show("Please select the file you want to edit!");
+                MessageBox.Show("Please select the file you want to Edit !");
                 return;
             }
             this.Hide();//vì không cần dữ liệu form nên dùng Close
@@ -101,5 +132,7 @@ namespace test.View
         {
 
         }
+
+       
     }
 }

@@ -79,7 +79,7 @@
             this.tbUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(194)))), ((int)(((byte)(185)))));
             this.tbUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbUserName.IconLeftOffset = new System.Drawing.Point(8, 0);
-            this.tbUserName.Location = new System.Drawing.Point(472, 253);
+            this.tbUserName.Location = new System.Drawing.Point(516, 266);
             this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.PasswordChar = '\0';
@@ -124,7 +124,7 @@
             this.tbPassWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(194)))), ((int)(((byte)(185)))));
             this.tbPassWord.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPassWord.IconLeftOffset = new System.Drawing.Point(8, 0);
-            this.tbPassWord.Location = new System.Drawing.Point(472, 374);
+            this.tbPassWord.Location = new System.Drawing.Point(516, 387);
             this.tbPassWord.Margin = new System.Windows.Forms.Padding(4);
             this.tbPassWord.Name = "tbPassWord";
             this.tbPassWord.PasswordChar = '\0';
@@ -160,7 +160,7 @@
             this.btSingIn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
             this.btSingIn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSingIn.ForeColor = System.Drawing.Color.White;
-            this.btSingIn.Location = new System.Drawing.Point(472, 457);
+            this.btSingIn.Location = new System.Drawing.Point(516, 470);
             this.btSingIn.Name = "btSingIn";
             this.btSingIn.Size = new System.Drawing.Size(207, 51);
             this.btSingIn.TabIndex = 17;
@@ -173,7 +173,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(479, 226);
+            this.label1.Location = new System.Drawing.Point(523, 239);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 23);
             this.label1.TabIndex = 18;
@@ -185,7 +185,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(479, 347);
+            this.label2.Location = new System.Drawing.Point(523, 360);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 19;

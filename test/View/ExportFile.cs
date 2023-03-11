@@ -24,6 +24,7 @@ namespace test.View
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             this.Close();
+
             Main main= new Main();
             main.ShowDialog();
         }

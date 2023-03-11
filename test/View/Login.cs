@@ -29,16 +29,24 @@ namespace test
             //if (util.ValidateEmpty(tbUserName.Text, "UserName") || util.ValidateEmpty(tbPassWord.Text, "Password"))
             //    return;
 
-            //if (tbUserName.Text == "admin" && tbPassWord.Text == "123")
-            //{
+            if (Application.OpenForms.Count < 1) // Nếu còn form khác đang mở
+            {
+                this.Close();
+                    
+            }
+                // Thực hiện ẩn form hiện tại
                 this.Hide();//Ẩn form nếu Close sẽ tắt cả CT
                 Main main = new Main();
                 main.ShowDialog();
-            //}
-            //else
-            //{
-            //    util.ShowMessageBox("UserName or Password is invalid");
-            //}
+    
+        }
+        private void Application_Idle(object sender, EventArgs e)
+        {
+            // Huỷ đăng ký sự kiện Application.Idle
+            Application.Idle -= Application_Idle;// Sự kiện xảy ra khi ứng dụng rảnh (idle).
+
+            // Tắt chương trình
+            Application.Exit();
         }
     }
 }

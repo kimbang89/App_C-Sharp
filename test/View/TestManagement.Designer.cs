@@ -69,6 +69,7 @@
             this.guna2Elipse11 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnClose = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.questionsDtgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -522,6 +523,12 @@
             this.guna2Elipse7.BorderRadius = 10;
             this.guna2Elipse7.TargetControl = this;
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // formCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -605,5 +612,6 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private Guna.UI2.WinForms.Guna2CircleButton btnClose;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

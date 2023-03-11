@@ -210,13 +210,11 @@ namespace test.View
                 package.Save();//lưu để tránh rò rỉ dữ liệu  
             }
         }
-        
         private void btExport_Click(object sender, EventArgs e)
         {
             ExportFile formEF= new ExportFile();    
             formEF.ShowDialog();
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();

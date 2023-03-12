@@ -265,7 +265,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2GradientButton btSignIn;
         private Guna.UI2.WinForms.Guna2GradientButton btSingIn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

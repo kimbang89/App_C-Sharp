@@ -42,6 +42,7 @@ namespace test.View
             //{
             //    btCreateTest.Visible = false;
             //    btEditTest.Visible = false;
+            //    btDelete.Visible = false;
             //}
         }
         public void LoadImageList()
@@ -101,7 +102,6 @@ namespace test.View
         }
         private void btDelete_Click(object sender, EventArgs e)
         {
-            
             if (listTests.SelectedItems.Count == 0)
             {
                 messageBoxCus.Content = "Please select the file you want to delete!";
@@ -118,8 +118,15 @@ namespace test.View
             string filePath = Application.StartupPath + @"\\Resources\\" + itemSelected.Text+".xlsx";
             if (File.Exists(filePath))
             {
-                File.Delete(filePath);
-                listTests.Items.Remove(itemSelected);
+                messageBoxCus.InitModeWarning();
+                messageBoxCus.Content = "Are you sure to delete this file?";
+                messageBoxCus.ShowDialog();
+
+                if (messageBoxCus.OK)
+                {
+                    File.Delete(filePath);
+                    listTests.Items.Remove(itemSelected);
+                }
             }
             else
             {
@@ -145,16 +152,26 @@ namespace test.View
         }
         private void btCreateTest_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            messageBoxCus.ModeCreate = true;
+            messageBoxCus.InitModeCreate();
+            messageBoxCus.ShowDialog();
 
-            ExportFile exportFile= new ExportFile();
-            exportFile.ShowDialog();
-
-            formCreate formCreate = new formCreate();//issues
-            formCreate.ShowDialog();
+            if (messageBoxCus.OK)
+            {
+                formCreate formCreate = new formCreate();//issues
+                formCreate.ShowDialog();
+            }
         }
         private void btStartTest_Click(object sender, EventArgs e)
         {
+            //check
+            if(listTests.SelectedItems.Count ==0) 
+            {
+                messageBoxCus.Content = "You haven't selected any test yet!!!";
+                messageBoxCus.ShowDialog();
+                return;
+            }
+
             ////mở form xác nhận
             messageBoxCus.ModeConfirm = true;
             messageBoxCus.InitModeConfirm();

@@ -16,6 +16,7 @@ namespace test
     {
         //dùng biến tĩnh để sữ dụng ở những form khác
         private static string role;
+        MessageBoxCus messageBoxCus= new MessageBoxCus();
         public string Role
         {
             get { return role; }
@@ -31,12 +32,16 @@ namespace test
         }
         private void btSingIn_Click(object sender, EventArgs e)
         {
-            ////validate
-            //Utility util = new Utility();
-            //if (util.ValidateEmpty(tbUserName.Text, "UserName") || util.ValidateEmpty(tbPassWord.Text, "Password"))
-            //    return;
+            //validate
+            if(tbUserName.Text=="" || tbPassWord.Text == "")
+            {
+                messageBoxCus.Content = "Please enter your account information";
+                messageBoxCus.ShowDialog();
+                return;
+            }
 
-            role=tbUserName.Text;
+            role = tbUserName.Text;
+
             // Thực hiện ẩn form hiện tại
             this.Hide();//Ẩn form nếu Close sẽ tắt cả CT
             Main main = new Main();

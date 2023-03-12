@@ -32,22 +32,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageBoxCus));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.ptWarning = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.tbnameFile = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ptExport = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ptConfirm = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbContent = new System.Windows.Forms.Label();
             this.btCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btOk = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.ptWarning = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptError = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.ptConfirm = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptExport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptConfirm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptError)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptConfirm)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
             // 
-            this.guna2BorderlessForm1.BorderRadius = 50;
+            this.guna2BorderlessForm1.BorderRadius = 10;
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.ResizeForm = false;
@@ -58,6 +62,8 @@
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderThickness = 5;
+            this.guna2Panel1.Controls.Add(this.tbnameFile);
+            this.guna2Panel1.Controls.Add(this.ptExport);
             this.guna2Panel1.Controls.Add(this.ptConfirm);
             this.guna2Panel1.Controls.Add(this.lbContent);
             this.guna2Panel1.Controls.Add(this.btCancel);
@@ -70,17 +76,54 @@
             this.guna2Panel1.Size = new System.Drawing.Size(779, 209);
             this.guna2Panel1.TabIndex = 1;
             // 
-            // ptWarning
+            // tbnameFile
             // 
-            this.ptWarning.Image = ((System.Drawing.Image)(resources.GetObject("ptWarning.Image")));
-            this.ptWarning.ImageRotate = 0F;
-            this.ptWarning.Location = new System.Drawing.Point(25, -7);
-            this.ptWarning.Name = "ptWarning";
-            this.ptWarning.Size = new System.Drawing.Size(253, 210);
-            this.ptWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptWarning.TabIndex = 89;
-            this.ptWarning.TabStop = false;
-            this.ptWarning.Visible = false;
+            this.tbnameFile.BorderThickness = 0;
+            this.tbnameFile.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbnameFile.DefaultText = "";
+            this.tbnameFile.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbnameFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbnameFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbnameFile.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbnameFile.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(243)))), ((int)(((byte)(252)))));
+            this.tbnameFile.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbnameFile.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbnameFile.ForeColor = System.Drawing.Color.Black;
+            this.tbnameFile.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbnameFile.Location = new System.Drawing.Point(321, 77);
+            this.tbnameFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbnameFile.Name = "tbnameFile";
+            this.tbnameFile.PasswordChar = '\0';
+            this.tbnameFile.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(197)))), ((int)(((byte)(252)))));
+            this.tbnameFile.PlaceholderText = "NameFile";
+            this.tbnameFile.SelectedText = "";
+            this.tbnameFile.Size = new System.Drawing.Size(376, 55);
+            this.tbnameFile.TabIndex = 93;
+            this.tbnameFile.Visible = false;
+            // 
+            // ptExport
+            // 
+            this.ptExport.Image = ((System.Drawing.Image)(resources.GetObject("ptExport.Image")));
+            this.ptExport.ImageRotate = 0F;
+            this.ptExport.Location = new System.Drawing.Point(12, -1);
+            this.ptExport.Name = "ptExport";
+            this.ptExport.Size = new System.Drawing.Size(253, 210);
+            this.ptExport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptExport.TabIndex = 91;
+            this.ptExport.TabStop = false;
+            this.ptExport.Visible = false;
+            // 
+            // ptConfirm
+            // 
+            this.ptConfirm.Image = ((System.Drawing.Image)(resources.GetObject("ptConfirm.Image")));
+            this.ptConfirm.ImageRotate = 0F;
+            this.ptConfirm.Location = new System.Drawing.Point(25, 0);
+            this.ptConfirm.Name = "ptConfirm";
+            this.ptConfirm.Size = new System.Drawing.Size(253, 210);
+            this.ptConfirm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptConfirm.TabIndex = 90;
+            this.ptConfirm.TabStop = false;
+            this.ptConfirm.Visible = false;
             // 
             // lbContent
             // 
@@ -101,8 +144,8 @@
             this.btCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btCancel.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(161)))), ((int)(((byte)(157)))));
-            this.btCancel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(159)))));
+            this.btCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(172)))));
+            this.btCancel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(107)))), ((int)(((byte)(28)))));
             this.btCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancel.ForeColor = System.Drawing.Color.White;
             this.btCancel.ImageSize = new System.Drawing.Size(35, 35);
@@ -121,8 +164,8 @@
             this.btOk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btOk.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btOk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btOk.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(161)))), ((int)(((byte)(157)))));
-            this.btOk.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(159)))));
+            this.btOk.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(174)))), ((int)(((byte)(234)))));
+            this.btOk.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(172)))), ((int)(((byte)(255)))));
             this.btOk.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btOk.ForeColor = System.Drawing.Color.White;
             this.btOk.ImageSize = new System.Drawing.Size(35, 35);
@@ -146,6 +189,18 @@
             this.lbTitle.Text = "ERROR";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ptWarning
+            // 
+            this.ptWarning.Image = ((System.Drawing.Image)(resources.GetObject("ptWarning.Image")));
+            this.ptWarning.ImageRotate = 0F;
+            this.ptWarning.Location = new System.Drawing.Point(25, -7);
+            this.ptWarning.Name = "ptWarning";
+            this.ptWarning.Size = new System.Drawing.Size(253, 210);
+            this.ptWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptWarning.TabIndex = 89;
+            this.ptWarning.TabStop = false;
+            this.ptWarning.Visible = false;
+            // 
             // ptError
             // 
             this.ptError.Image = ((System.Drawing.Image)(resources.GetObject("ptError.Image")));
@@ -157,17 +212,10 @@
             this.ptError.TabIndex = 0;
             this.ptError.TabStop = false;
             // 
-            // ptConfirm
+            // guna2Elipse1
             // 
-            this.ptConfirm.Image = ((System.Drawing.Image)(resources.GetObject("ptConfirm.Image")));
-            this.ptConfirm.ImageRotate = 0F;
-            this.ptConfirm.Location = new System.Drawing.Point(25, 0);
-            this.ptConfirm.Name = "ptConfirm";
-            this.ptConfirm.Size = new System.Drawing.Size(253, 210);
-            this.ptConfirm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptConfirm.TabIndex = 90;
-            this.ptConfirm.TabStop = false;
-            this.ptConfirm.Visible = false;
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this.tbnameFile;
             // 
             // MessageBoxCus
             // 
@@ -181,9 +229,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageBox";
             this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptExport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptConfirm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptError)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptConfirm)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,5 +247,8 @@
         private System.Windows.Forms.Label lbContent;
         private Guna.UI2.WinForms.Guna2PictureBox ptWarning;
         private Guna.UI2.WinForms.Guna2PictureBox ptConfirm;
+        private Guna.UI2.WinForms.Guna2PictureBox ptExport;
+        private Guna.UI2.WinForms.Guna2TextBox tbnameFile;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

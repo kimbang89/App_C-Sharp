@@ -100,12 +100,6 @@
     <Compile Include="View\Exam.Designer.cs">
       <DependentUpon>Exam.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ExportFile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ExportFile.Designer.cs">
-      <DependentUpon>ExportFile.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,9 +131,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ExportFile.resx">
-      <DependentUpon>ExportFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

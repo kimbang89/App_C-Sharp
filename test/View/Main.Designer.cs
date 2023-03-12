@@ -34,19 +34,20 @@
             this.Tests = new System.Windows.Forms.TabPage();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.home = new System.Windows.Forms.TabPage();
+            this.btDelete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btEditTest = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btStartTest = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btCreateTest = new Guna.UI2.WinForms.Guna2GradientButton();
             this.listTests = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
-            this.btDelete = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2TabControl1.SuspendLayout();
             this.Tests.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.home.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -117,6 +118,27 @@
             this.home.TabIndex = 0;
             this.home.Text = "Tests";
             // 
+            // btDelete
+            // 
+            this.btDelete.BorderRadius = 20;
+            this.btDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btDelete.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(161)))), ((int)(((byte)(157)))));
+            this.btDelete.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(159)))));
+            this.btDelete.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDelete.ForeColor = System.Drawing.Color.White;
+            this.btDelete.Image = ((System.Drawing.Image)(resources.GetObject("btDelete.Image")));
+            this.btDelete.ImageSize = new System.Drawing.Size(35, 35);
+            this.btDelete.Location = new System.Drawing.Point(175, 705);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(212, 52);
+            this.btDelete.TabIndex = 86;
+            this.btDelete.Text = "Delete";
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            // 
             // btEditTest
             // 
             this.btEditTest.BorderRadius = 20;
@@ -182,6 +204,7 @@
             // 
             // listTests
             // 
+            this.listTests.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listTests.BackColor = System.Drawing.SystemColors.HighlightText;
             this.listTests.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listTests.HideSelection = false;
@@ -208,12 +231,6 @@
             this.guna2Elipse1.BorderRadius = 50;
             this.guna2Elipse1.TargetControl = this.guna2TabControl1;
             // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
             // btnClose
             // 
             this.btnClose.BorderRadius = 20;
@@ -228,34 +245,25 @@
             this.btnClose.HoverState.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnClose.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnClose.Location = new System.Drawing.Point(1391, 1);
+            this.btnClose.Location = new System.Drawing.Point(1364, 1);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(107, 45);
+            this.btnClose.Size = new System.Drawing.Size(134, 45);
             this.btnClose.TabIndex = 92;
-            this.btnClose.Text = "EXIT";
+            this.btnClose.Text = "EXIT      ";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btDelete
+            // guna2PictureBox2
             // 
-            this.btDelete.BorderRadius = 20;
-            this.btDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btDelete.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(161)))), ((int)(((byte)(157)))));
-            this.btDelete.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(159)))));
-            this.btDelete.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDelete.ForeColor = System.Drawing.Color.White;
-            this.btDelete.Image = ((System.Drawing.Image)(resources.GetObject("btDelete.Image")));
-            this.btDelete.ImageSize = new System.Drawing.Size(35, 35);
-            this.btDelete.Location = new System.Drawing.Point(175, 705);
-            this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(212, 52);
-            this.btDelete.TabIndex = 86;
-            this.btDelete.Text = "Delete";
-            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(632, 12);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(95, 64);
+            this.guna2PictureBox2.TabIndex = 93;
+            this.guna2PictureBox2.TabStop = false;
             // 
             // Main
             // 
@@ -263,6 +271,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1500, 900);
+            this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2TabControl1);
@@ -275,6 +284,7 @@
             this.Tests.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.home.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,9 +300,9 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2GradientButton btEditTest;
         private Guna.UI2.WinForms.Guna2Button btnClose;
         private Guna.UI2.WinForms.Guna2GradientButton btDelete;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
     }
 }

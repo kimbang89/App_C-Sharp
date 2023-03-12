@@ -67,6 +67,21 @@ namespace test.View
         }
         private void listTests_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listTests.SelectedItems.Count == 0) 
+            {
+                btStartTest.FillColor = ColorTranslator.FromHtml("#10A19D");
+                btStartTest.FillColor2 = ColorTranslator.FromHtml("#22A39F");
+
+                btEditTest.FillColor2 = ColorTranslator.FromHtml("#10A19D");
+                btEditTest.FillColor = ColorTranslator.FromHtml("#22A39F");
+
+                btDelete.FillColor2 = ColorTranslator.FromHtml("#10A19D");
+                btDelete.FillColor = ColorTranslator.FromHtml("#22A39F");
+
+                btCreateTest.FillColor2 = ColorTranslator.FromHtml("#10A19D");
+                btCreateTest.FillColor = ColorTranslator.FromHtml("#22A39F");
+                return;
+            }
             btStartTest.FillColor = ColorTranslator.FromHtml("#B721FF");
             btStartTest.FillColor2 = ColorTranslator.FromHtml("#21D4FD");
 
@@ -81,6 +96,7 @@ namespace test.View
         }
         private void btDelete_Click(object sender, EventArgs e)
         {
+
             if (listTests.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Please select the file you want to delete!");
@@ -130,7 +146,11 @@ namespace test.View
         }
         private void btStartTest_Click(object sender, EventArgs e)
         {
-
+            ////mở form xác nhận
+            //Confirm confirm= new Confirm();
+            //confirm.ShowDialog();
+            Exam exam = new Exam();
+            exam.ShowDialog();
         }
 
        

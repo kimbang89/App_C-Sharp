@@ -95,6 +95,18 @@
   <ItemGroup>
     <Compile Include="Code\Test.cs" />
     <Compile Include="Code\Utility.cs" />
+    <Compile Include="View\Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Confirm.Designer.cs">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Exam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Exam.Designer.cs">
+      <DependentUpon>Exam.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ExportFile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +133,12 @@
     <Compile Include="View\CreateTest.Designer.cs">
       <DependentUpon>CreateTest.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Confirm.resx">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Exam.resx">
+      <DependentUpon>Exam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

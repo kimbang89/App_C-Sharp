@@ -17,7 +17,7 @@ namespace test.View
         private ImageList img;
         private List<string> excelFiles = new List<string>();
         private static string[] files;
-
+        MessageBoxCus messageBoxCus = new MessageBoxCus();
         public Main()
         {
             InitializeComponent();
@@ -63,7 +63,12 @@ namespace test.View
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            messageBoxCus.InitModeWarning();
+            messageBoxCus.Content = "Are you sure you want to exit now?";
+            messageBoxCus.ShowDialog();
+
+            if(messageBoxCus.OK)
+                Application.Exit();
         }
         private void listTests_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -96,16 +101,18 @@ namespace test.View
         }
         private void btDelete_Click(object sender, EventArgs e)
         {
-
+            
             if (listTests.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Please select the file you want to delete!");
+                messageBoxCus.Content = "Please select the file you want to delete!";
+                messageBoxCus.ShowDialog();
                 return;
             }
             ListViewItem itemSelected = listTests.SelectedItems[0];
             if (itemSelected.Text == "")
             {
-                MessageBox.Show("Please select the file you want to delete!");
+                messageBoxCus.Content = "Please select the file you want to delete!";
+                messageBoxCus.ShowDialog();
                 return;
             }
             string filePath = Application.StartupPath + @"\\Resources\\" + itemSelected.Text+".xlsx";
@@ -116,7 +123,8 @@ namespace test.View
             }
             else
             {
-                MessageBox.Show("The selected file does not exist!");
+                messageBoxCus.Content = "The selected file does not exist!";
+                messageBoxCus.ShowDialog();
             }
         }
         private void btEditTest_Click(object sender, EventArgs e)
@@ -124,7 +132,8 @@ namespace test.View
             //nếu chưa select file thì validate
             if (listTests.SelectedItems.Count < 1)
             {
-                MessageBox.Show("Please select the file you want to Edit !");
+                messageBoxCus.Content = "Please select the file you want to Edit !";
+                messageBoxCus.ShowDialog();
                 return;
             }
             this.Hide();//vì không cần dữ liệu form nên dùng Close
@@ -147,10 +156,16 @@ namespace test.View
         private void btStartTest_Click(object sender, EventArgs e)
         {
             ////mở form xác nhận
-            //Confirm confirm= new Confirm();
-            //confirm.ShowDialog();
-            Exam exam = new Exam();
-            exam.ShowDialog();
+            messageBoxCus.ModeConfirm = true;
+            messageBoxCus.InitModeConfirm();
+            messageBoxCus.Content = "Are you sure to take the test now?";
+            messageBoxCus.ShowDialog();
+
+            if (messageBoxCus.OK)
+            {
+                Exam exam = new Exam();
+                exam.ShowDialog();
+            }
         }
 
        

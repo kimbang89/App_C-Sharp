@@ -16,10 +16,32 @@ namespace test.View
 {
     public partial class Exam : Form
     {
-        private Utility util= new Utility();
+        MessageBoxCus messageBoxCus= new MessageBoxCus();
         public Exam()
         {
             InitializeComponent();
+        }
+        public bool WarningExitTest()
+        {
+            messageBoxCus.InitModeWarning();
+            messageBoxCus.Content = "Are you sure you want to exit now?";
+            messageBoxCus.ShowDialog();
+
+            if (messageBoxCus.OK)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool ValidateEmpty(string textBoxEmpty, string message)
+        {
+            if (textBoxEmpty == "")
+            {
+                messageBoxCus.Content="Please enter a " + message;
+                messageBoxCus.ShowDialog();
+                return true;
+            }
+            return false;
         }
         private void btBack_Click(object sender, EventArgs e)
         {
@@ -29,16 +51,6 @@ namespace test.View
             this.Close();
             Main main = new Main();
             main.ShowDialog();
-        }
-        public bool WarningExitTest()
-        {
-            DialogResult result = new DialogResult();
-            result=MessageBox.Show("Are you sure you want to exit now?","Warning",MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK)
-            {
-                return true;
-            }
-            return false;
         }
         private void btExit_Click(object sender, EventArgs e)
         {
@@ -120,7 +132,8 @@ namespace test.View
                 ptCountdown.Visible = false;
                 lbCountdown.Visible=false;
                 timer1.Stop();
-                util.ShowMessageBox("TIME OUT!!!!");
+                messageBoxCus.Content = "TIME OUT!!!!";
+                messageBoxCus.ShowDialog();
             }
         }
 

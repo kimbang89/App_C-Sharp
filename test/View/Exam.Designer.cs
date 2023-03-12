@@ -38,6 +38,14 @@
             this.radioBt1 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.tick1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelAns2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ans2 = new System.Windows.Forms.RichTextBox();
+            this.panelAns3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ans3 = new System.Windows.Forms.RichTextBox();
+            this.panelAns4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ans4 = new System.Windows.Forms.RichTextBox();
+            this.panelAns1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ans1 = new System.Windows.Forms.RichTextBox();
             this.btQuestion = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lbCountdown = new System.Windows.Forms.Label();
             this.ptCountdown = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -53,25 +61,17 @@
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.ans1 = new System.Windows.Forms.RichTextBox();
-            this.panelAns1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.panelAns2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.ans2 = new System.Windows.Forms.RichTextBox();
-            this.panelAns3 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.ans3 = new System.Windows.Forms.RichTextBox();
-            this.panelAns4 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.ans4 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tick1)).BeginInit();
             this.panel.SuspendLayout();
+            this.panelAns2.SuspendLayout();
+            this.panelAns3.SuspendLayout();
+            this.panelAns4.SuspendLayout();
+            this.panelAns1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptCountdown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tick4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tick3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tick2)).BeginInit();
             this.guna2ShadowPanel3.SuspendLayout();
-            this.panelAns1.SuspendLayout();
-            this.panelAns2.SuspendLayout();
-            this.panelAns3.SuspendLayout();
-            this.panelAns4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btBack
@@ -105,7 +105,7 @@
             this.btExit.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(125)))), ((int)(((byte)(160)))));
             this.btExit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
-            this.btExit.HoverState.Font = new System.Drawing.Font("Century Gothic", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExit.HoverState.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExit.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btExit.Image = ((System.Drawing.Image)(resources.GetObject("btExit.Image")));
             this.btExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -197,7 +197,7 @@
             this.radioBt1.CheckedState.BorderThickness = 0;
             this.radioBt1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radioBt1.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radioBt1.Location = new System.Drawing.Point(51, 102);
+            this.radioBt1.Location = new System.Drawing.Point(51, 126);
             this.radioBt1.Name = "radioBt1";
             this.radioBt1.Size = new System.Drawing.Size(30, 30);
             this.radioBt1.TabIndex = 0;
@@ -213,7 +213,7 @@
             this.tick1.FillColor = System.Drawing.Color.Transparent;
             this.tick1.Image = ((System.Drawing.Image)(resources.GetObject("tick1.Image")));
             this.tick1.ImageRotate = 0F;
-            this.tick1.Location = new System.Drawing.Point(51, 92);
+            this.tick1.Location = new System.Drawing.Point(51, 116);
             this.tick1.Name = "tick1";
             this.tick1.Size = new System.Drawing.Size(40, 40);
             this.tick1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -248,6 +248,94 @@
             this.panel.ShadowDecoration.BorderRadius = 10;
             this.panel.Size = new System.Drawing.Size(1476, 631);
             this.panel.TabIndex = 50;
+            // 
+            // panelAns2
+            // 
+            this.panelAns2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(152)))), ((int)(((byte)(185)))));
+            this.panelAns2.BorderRadius = 10;
+            this.panelAns2.BorderThickness = 5;
+            this.panelAns2.Controls.Add(this.ans2);
+            this.panelAns2.Location = new System.Drawing.Point(844, 126);
+            this.panelAns2.Name = "panelAns2";
+            this.panelAns2.Size = new System.Drawing.Size(547, 153);
+            this.panelAns2.TabIndex = 98;
+            // 
+            // ans2
+            // 
+            this.ans2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.ans2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ans2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ans2.Location = new System.Drawing.Point(17, 10);
+            this.ans2.Name = "ans2";
+            this.ans2.Size = new System.Drawing.Size(517, 131);
+            this.ans2.TabIndex = 97;
+            this.ans2.Text = "dấđâs";
+            // 
+            // panelAns3
+            // 
+            this.panelAns3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(152)))), ((int)(((byte)(185)))));
+            this.panelAns3.BorderRadius = 10;
+            this.panelAns3.BorderThickness = 5;
+            this.panelAns3.Controls.Add(this.ans3);
+            this.panelAns3.Location = new System.Drawing.Point(97, 342);
+            this.panelAns3.Name = "panelAns3";
+            this.panelAns3.Size = new System.Drawing.Size(547, 153);
+            this.panelAns3.TabIndex = 98;
+            // 
+            // ans3
+            // 
+            this.ans3.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.ans3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ans3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ans3.Location = new System.Drawing.Point(16, 10);
+            this.ans3.Name = "ans3";
+            this.ans3.Size = new System.Drawing.Size(518, 131);
+            this.ans3.TabIndex = 97;
+            this.ans3.Text = "dấđâs";
+            // 
+            // panelAns4
+            // 
+            this.panelAns4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(152)))), ((int)(((byte)(185)))));
+            this.panelAns4.BorderRadius = 10;
+            this.panelAns4.BorderThickness = 5;
+            this.panelAns4.Controls.Add(this.ans4);
+            this.panelAns4.Location = new System.Drawing.Point(844, 342);
+            this.panelAns4.Name = "panelAns4";
+            this.panelAns4.Size = new System.Drawing.Size(547, 153);
+            this.panelAns4.TabIndex = 98;
+            // 
+            // ans4
+            // 
+            this.ans4.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.ans4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ans4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ans4.Location = new System.Drawing.Point(17, 10);
+            this.ans4.Name = "ans4";
+            this.ans4.Size = new System.Drawing.Size(517, 131);
+            this.ans4.TabIndex = 97;
+            this.ans4.Text = "dấđâs";
+            // 
+            // panelAns1
+            // 
+            this.panelAns1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(152)))), ((int)(((byte)(185)))));
+            this.panelAns1.BorderRadius = 10;
+            this.panelAns1.BorderThickness = 5;
+            this.panelAns1.Controls.Add(this.ans1);
+            this.panelAns1.Location = new System.Drawing.Point(97, 126);
+            this.panelAns1.Name = "panelAns1";
+            this.panelAns1.Size = new System.Drawing.Size(547, 153);
+            this.panelAns1.TabIndex = 98;
+            // 
+            // ans1
+            // 
+            this.ans1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.ans1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ans1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ans1.Location = new System.Drawing.Point(16, 10);
+            this.ans1.Name = "ans1";
+            this.ans1.Size = new System.Drawing.Size(518, 131);
+            this.ans1.TabIndex = 97;
+            this.ans1.Text = "dấđâs";
             // 
             // btQuestion
             // 
@@ -293,7 +381,7 @@
             this.tick4.FillColor = System.Drawing.Color.Transparent;
             this.tick4.Image = ((System.Drawing.Image)(resources.GetObject("tick4.Image")));
             this.tick4.ImageRotate = 0F;
-            this.tick4.Location = new System.Drawing.Point(798, 308);
+            this.tick4.Location = new System.Drawing.Point(798, 332);
             this.tick4.Name = "tick4";
             this.tick4.Size = new System.Drawing.Size(40, 40);
             this.tick4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -306,7 +394,7 @@
             this.tick3.FillColor = System.Drawing.Color.Transparent;
             this.tick3.Image = ((System.Drawing.Image)(resources.GetObject("tick3.Image")));
             this.tick3.ImageRotate = 0F;
-            this.tick3.Location = new System.Drawing.Point(51, 308);
+            this.tick3.Location = new System.Drawing.Point(51, 332);
             this.tick3.Name = "tick3";
             this.tick3.Size = new System.Drawing.Size(40, 40);
             this.tick3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -319,7 +407,7 @@
             this.tick2.FillColor = System.Drawing.Color.Transparent;
             this.tick2.Image = ((System.Drawing.Image)(resources.GetObject("tick2.Image")));
             this.tick2.ImageRotate = 0F;
-            this.tick2.Location = new System.Drawing.Point(798, 92);
+            this.tick2.Location = new System.Drawing.Point(798, 116);
             this.tick2.Name = "tick2";
             this.tick2.Size = new System.Drawing.Size(40, 40);
             this.tick2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -334,7 +422,7 @@
             this.radioBt4.CheckedState.BorderThickness = 0;
             this.radioBt4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radioBt4.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radioBt4.Location = new System.Drawing.Point(798, 318);
+            this.radioBt4.Location = new System.Drawing.Point(798, 342);
             this.radioBt4.Name = "radioBt4";
             this.radioBt4.Size = new System.Drawing.Size(30, 30);
             this.radioBt4.TabIndex = 0;
@@ -352,7 +440,7 @@
             this.radioBt3.CheckedState.BorderThickness = 0;
             this.radioBt3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radioBt3.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radioBt3.Location = new System.Drawing.Point(61, 318);
+            this.radioBt3.Location = new System.Drawing.Point(61, 342);
             this.radioBt3.Name = "radioBt3";
             this.radioBt3.Size = new System.Drawing.Size(30, 30);
             this.radioBt3.TabIndex = 0;
@@ -370,7 +458,7 @@
             this.radioBt2.CheckedState.BorderThickness = 0;
             this.radioBt2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radioBt2.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radioBt2.Location = new System.Drawing.Point(798, 102);
+            this.radioBt2.Location = new System.Drawing.Point(798, 126);
             this.radioBt2.Name = "radioBt2";
             this.radioBt2.Size = new System.Drawing.Size(30, 30);
             this.radioBt2.TabIndex = 0;
@@ -419,94 +507,6 @@
             this.label2.TabIndex = 94;
             this.label2.Text = "Welcome To Quiz Master";
             // 
-            // ans1
-            // 
-            this.ans1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ans1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ans1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ans1.Location = new System.Drawing.Point(16, 10);
-            this.ans1.Name = "ans1";
-            this.ans1.Size = new System.Drawing.Size(518, 131);
-            this.ans1.TabIndex = 97;
-            this.ans1.Text = "dấđâs";
-            // 
-            // panelAns1
-            // 
-            this.panelAns1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(152)))), ((int)(((byte)(185)))));
-            this.panelAns1.BorderRadius = 10;
-            this.panelAns1.BorderThickness = 5;
-            this.panelAns1.Controls.Add(this.ans1);
-            this.panelAns1.Location = new System.Drawing.Point(97, 102);
-            this.panelAns1.Name = "panelAns1";
-            this.panelAns1.Size = new System.Drawing.Size(547, 153);
-            this.panelAns1.TabIndex = 98;
-            // 
-            // panelAns2
-            // 
-            this.panelAns2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(152)))), ((int)(((byte)(185)))));
-            this.panelAns2.BorderRadius = 10;
-            this.panelAns2.BorderThickness = 5;
-            this.panelAns2.Controls.Add(this.ans2);
-            this.panelAns2.Location = new System.Drawing.Point(844, 102);
-            this.panelAns2.Name = "panelAns2";
-            this.panelAns2.Size = new System.Drawing.Size(547, 153);
-            this.panelAns2.TabIndex = 98;
-            // 
-            // ans2
-            // 
-            this.ans2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ans2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ans2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ans2.Location = new System.Drawing.Point(17, 10);
-            this.ans2.Name = "ans2";
-            this.ans2.Size = new System.Drawing.Size(517, 131);
-            this.ans2.TabIndex = 97;
-            this.ans2.Text = "dấđâs";
-            // 
-            // panelAns3
-            // 
-            this.panelAns3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(152)))), ((int)(((byte)(185)))));
-            this.panelAns3.BorderRadius = 10;
-            this.panelAns3.BorderThickness = 5;
-            this.panelAns3.Controls.Add(this.ans3);
-            this.panelAns3.Location = new System.Drawing.Point(97, 318);
-            this.panelAns3.Name = "panelAns3";
-            this.panelAns3.Size = new System.Drawing.Size(547, 153);
-            this.panelAns3.TabIndex = 98;
-            // 
-            // ans3
-            // 
-            this.ans3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ans3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ans3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ans3.Location = new System.Drawing.Point(16, 10);
-            this.ans3.Name = "ans3";
-            this.ans3.Size = new System.Drawing.Size(518, 131);
-            this.ans3.TabIndex = 97;
-            this.ans3.Text = "dấđâs";
-            // 
-            // panelAns4
-            // 
-            this.panelAns4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(152)))), ((int)(((byte)(185)))));
-            this.panelAns4.BorderRadius = 10;
-            this.panelAns4.BorderThickness = 5;
-            this.panelAns4.Controls.Add(this.ans4);
-            this.panelAns4.Location = new System.Drawing.Point(844, 318);
-            this.panelAns4.Name = "panelAns4";
-            this.panelAns4.Size = new System.Drawing.Size(547, 153);
-            this.panelAns4.TabIndex = 98;
-            // 
-            // ans4
-            // 
-            this.ans4.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ans4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ans4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ans4.Location = new System.Drawing.Point(17, 10);
-            this.ans4.Name = "ans4";
-            this.ans4.Size = new System.Drawing.Size(517, 131);
-            this.ans4.TabIndex = 97;
-            this.ans4.Text = "dấđâs";
-            // 
             // Exam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -527,15 +527,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.tick1)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            this.panelAns2.ResumeLayout(false);
+            this.panelAns3.ResumeLayout(false);
+            this.panelAns4.ResumeLayout(false);
+            this.panelAns1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptCountdown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tick4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tick3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tick2)).EndInit();
             this.guna2ShadowPanel3.ResumeLayout(false);
-            this.panelAns1.ResumeLayout(false);
-            this.panelAns2.ResumeLayout(false);
-            this.panelAns3.ResumeLayout(false);
-            this.panelAns4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

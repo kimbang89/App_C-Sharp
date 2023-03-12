@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using test.Code;
 using LinqToExcel.Extensions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Net.WebRequestMethods;
 
 namespace test.View
 {
@@ -23,8 +24,8 @@ namespace test.View
         public DataTable dt;
         private DataRow rowCurrent;
         private string linkFile="" ;
-        private Utility util= new Utility();
         private static string action;
+        MessageBoxCus messageBoxCus= new MessageBoxCus();
         public string LinkFile
         {
             get { return linkFile; }
@@ -70,7 +71,9 @@ namespace test.View
             }
             catch (FormatException)
             {
-                util.ShowMessageBox("         Field ID is not valid! ");//lấy string lỗi
+                messageBoxCus.Content = "Field ID is not valid!";
+                messageBoxCus.ShowDialog();
+
                 idQuestion.BackColor = Color.Red;
                 idQuestion.Focus();
                 return true;//error
@@ -178,7 +181,8 @@ namespace test.View
             }
             else
             {
-                util.ShowMessageBox("you haven't entered some fields yet");
+                messageBoxCus.Content = "you haven't entered some fields yet";
+                messageBoxCus.ShowDialog();
             }
         }
         private void questionsDtgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -244,13 +248,25 @@ namespace test.View
         }
         private void btExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            messageBoxCus.InitModeWarning();
+            messageBoxCus.Content = "Are you sure you want to exit now?";
+            messageBoxCus.ShowDialog();
+
+            if (messageBoxCus.OK)
+                Application.Exit();
         }
         private void btBack_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Main main= new Main();
-            main.ShowDialog();
+            messageBoxCus.InitModeWarning();
+            messageBoxCus.Content = "Are you sure you want to exit now?";
+            messageBoxCus.ShowDialog();
+
+            if (messageBoxCus.OK)
+            {
+                this.Close();
+                Main main= new Main();
+                main.ShowDialog();
+            }
         }
     }
 }

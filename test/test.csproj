@@ -93,7 +93,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\Test.cs" />
+    <Compile Include="Code\AnsModel.cs" />
+    <Compile Include="Code\TestModel.cs" />
+    <Compile Include="Code\TestColumns.cs" />
     <Compile Include="View\Exam.cs">
       <SubType>Form</SubType>
     </Compile>

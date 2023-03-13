@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
-            this.Tests = new System.Windows.Forms.TabPage();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.home = new System.Windows.Forms.TabPage();
             this.btDelete = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -44,7 +43,6 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2TabControl1.SuspendLayout();
-            this.Tests.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -53,7 +51,6 @@
             // guna2TabControl1
             // 
             this.guna2TabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.guna2TabControl1.Controls.Add(this.Tests);
             this.guna2TabControl1.Controls.Add(this.home);
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(-3, 97);
@@ -81,15 +78,6 @@
             // 
             // Tests
             // 
-            this.Tests.Controls.Add(this.guna2PictureBox1);
-            this.Tests.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tests.Location = new System.Drawing.Point(184, 4);
-            this.Tests.Name = "Tests";
-            this.Tests.Padding = new System.Windows.Forms.Padding(10);
-            this.Tests.Size = new System.Drawing.Size(1317, 797);
-            this.Tests.TabIndex = 1;
-            this.Tests.Text = "Home";
-            this.Tests.UseVisualStyleBackColor = true;
             // 
             // guna2PictureBox1
             // 
@@ -97,7 +85,7 @@
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, -3);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(1317, 797);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1276, 797);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -153,7 +141,7 @@
             this.btEditTest.ForeColor = System.Drawing.Color.White;
             this.btEditTest.Image = ((System.Drawing.Image)(resources.GetObject("btEditTest.Image")));
             this.btEditTest.ImageSize = new System.Drawing.Size(30, 30);
-            this.btEditTest.Location = new System.Drawing.Point(438, 705);
+            this.btEditTest.Location = new System.Drawing.Point(459, 705);
             this.btEditTest.Name = "btEditTest";
             this.btEditTest.Size = new System.Drawing.Size(212, 52);
             this.btEditTest.TabIndex = 86;
@@ -189,13 +177,15 @@
             this.btCreateTest.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btCreateTest.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btCreateTest.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btCreateTest.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(161)))), ((int)(((byte)(157)))));
-            this.btCreateTest.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(159)))));
+            this.btCreateTest.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(255)))), ((int)(((byte)(136)))));
+            this.btCreateTest.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.btCreateTest.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCreateTest.ForeColor = System.Drawing.Color.White;
+            this.btCreateTest.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.btCreateTest.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(255)))), ((int)(((byte)(136)))));
             this.btCreateTest.Image = ((System.Drawing.Image)(resources.GetObject("btCreateTest.Image")));
             this.btCreateTest.ImageSize = new System.Drawing.Size(30, 30);
-            this.btCreateTest.Location = new System.Drawing.Point(730, 705);
+            this.btCreateTest.Location = new System.Drawing.Point(747, 705);
             this.btCreateTest.Name = "btCreateTest";
             this.btCreateTest.Size = new System.Drawing.Size(207, 52);
             this.btCreateTest.TabIndex = 86;
@@ -281,7 +271,6 @@
             this.Text = "FormAddQuestioncs";
             this.Load += new System.EventHandler(this.Main_Load);
             this.guna2TabControl1.ResumeLayout(false);
-            this.Tests.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.home.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
@@ -292,7 +281,6 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
-        private System.Windows.Forms.TabPage Tests;
         private System.Windows.Forms.TabPage home;
         private Guna.UI2.WinForms.Guna2GradientButton btCreateTest;
         private System.Windows.Forms.ListView listTests;

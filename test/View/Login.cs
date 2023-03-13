@@ -33,14 +33,14 @@ namespace test
         private void btSingIn_Click(object sender, EventArgs e)
         {
             //validate
-            if(tbUserName.Text=="" || tbPassWord.Text == "")
-            {
-                messageBoxCus.Content = "Please enter your account information";
-                messageBoxCus.ShowDialog();
-                return;
-            }
+            //if(tbUserName.Text=="" || tbPassWord.Text == "")
+            //{
+            //    messageBoxCus.Content = "Please enter your account information";
+            //    messageBoxCus.ShowDialog();
+            //    return;
+            //}
 
-            role = tbUserName.Text;
+            //role = tbUserName.Text;
 
             // Thực hiện ẩn form hiện tại
             this.Hide();//Ẩn form nếu Close sẽ tắt cả CT

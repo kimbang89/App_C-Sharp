@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageBoxCus));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbTimeOut = new System.Windows.Forms.Label();
             this.tbnameFile = new Guna.UI2.WinForms.Guna2TextBox();
             this.ptExport = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptConfirm = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -42,6 +43,7 @@
             this.ptWarning = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptError = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptConfirm)).BeginInit();
@@ -62,6 +64,7 @@
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderThickness = 5;
+            this.guna2Panel1.Controls.Add(this.lbTimeOut);
             this.guna2Panel1.Controls.Add(this.tbnameFile);
             this.guna2Panel1.Controls.Add(this.ptExport);
             this.guna2Panel1.Controls.Add(this.ptConfirm);
@@ -75,6 +78,20 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(779, 209);
             this.guna2Panel1.TabIndex = 1;
+            // 
+            // lbTimeOut
+            // 
+            this.lbTimeOut.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbTimeOut.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimeOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
+            this.lbTimeOut.Location = new System.Drawing.Point(334, 45);
+            this.lbTimeOut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTimeOut.Name = "lbTimeOut";
+            this.lbTimeOut.Size = new System.Drawing.Size(397, 64);
+            this.lbTimeOut.TabIndex = 94;
+            this.lbTimeOut.Text = "TIME OUT !!!";
+            this.lbTimeOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTimeOut.Visible = false;
             // 
             // tbnameFile
             // 
@@ -105,9 +122,9 @@
             // 
             this.ptExport.Image = ((System.Drawing.Image)(resources.GetObject("ptExport.Image")));
             this.ptExport.ImageRotate = 0F;
-            this.ptExport.Location = new System.Drawing.Point(12, -1);
+            this.ptExport.Location = new System.Drawing.Point(12, -6);
             this.ptExport.Name = "ptExport";
-            this.ptExport.Size = new System.Drawing.Size(253, 210);
+            this.ptExport.Size = new System.Drawing.Size(282, 216);
             this.ptExport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptExport.TabIndex = 91;
             this.ptExport.TabStop = false;
@@ -117,7 +134,7 @@
             // 
             this.ptConfirm.Image = ((System.Drawing.Image)(resources.GetObject("ptConfirm.Image")));
             this.ptConfirm.ImageRotate = 0F;
-            this.ptConfirm.Location = new System.Drawing.Point(25, 0);
+            this.ptConfirm.Location = new System.Drawing.Point(22, 0);
             this.ptConfirm.Name = "ptConfirm";
             this.ptConfirm.Size = new System.Drawing.Size(253, 210);
             this.ptConfirm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -193,7 +210,7 @@
             // 
             this.ptWarning.Image = ((System.Drawing.Image)(resources.GetObject("ptWarning.Image")));
             this.ptWarning.ImageRotate = 0F;
-            this.ptWarning.Location = new System.Drawing.Point(25, -7);
+            this.ptWarning.Location = new System.Drawing.Point(12, 0);
             this.ptWarning.Name = "ptWarning";
             this.ptWarning.Size = new System.Drawing.Size(253, 210);
             this.ptWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -205,7 +222,7 @@
             // 
             this.ptError.Image = ((System.Drawing.Image)(resources.GetObject("ptError.Image")));
             this.ptError.ImageRotate = 0F;
-            this.ptError.Location = new System.Drawing.Point(0, 0);
+            this.ptError.Location = new System.Drawing.Point(3, 3);
             this.ptError.Name = "ptError";
             this.ptError.Size = new System.Drawing.Size(300, 203);
             this.ptError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -216,6 +233,10 @@
             // 
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this.tbnameFile;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
             // 
             // MessageBoxCus
             // 
@@ -250,5 +271,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox ptExport;
         private Guna.UI2.WinForms.Guna2TextBox tbnameFile;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.Label lbTimeOut;
+        private System.Windows.Forms.Timer timer1;
     }
 }

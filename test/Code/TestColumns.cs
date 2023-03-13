@@ -9,7 +9,7 @@ using LinqToExcel.Attributes;
 
 namespace test.Code
 {
-    public class Test
+    public class TestColumns
     {
         [ExcelColumn("ID")] 
         public int ID { get; set; }

@@ -24,8 +24,13 @@ namespace test.View
         public DataTable dt;
         private DataRow rowCurrent;
         private string linkFile="" ;
-        private static string action;
+        private bool modeCreate;
         MessageBoxCus messageBoxCus= new MessageBoxCus();
+        public bool ModeCreate
+        {
+            get { return modeCreate; }
+            set { modeCreate = value; }
+        }
         public string LinkFile
         {
             get { return linkFile; }
@@ -34,10 +39,6 @@ namespace test.View
         public formCreate()
         {
             InitializeComponent();
-        }
-        public formCreate(string action)
-        {
-            formCreate.action = action;
         }
         private void formCreate_Load(object sender, EventArgs e)
         {
@@ -53,7 +54,7 @@ namespace test.View
             idAns.SelectedIndex = 0;//mặc định chọn Id Answer là A
 
             //trong action create khi tạo mới file không cần nạp dữ liệu
-            if(action != "create")
+            if(modeCreate==false)
             {
                 getData();
             }
@@ -89,7 +90,7 @@ namespace test.View
                     var excel = new ExcelQueryFactory(linkFile);// Tạo một đối tượng workBook, chứa các trang tính (workshet)
 
                     //lấy từng row trong sheet1 trả về một mảng chứa các row kiểu Test(..,..,..)
-                    var test = from ts in excel.Worksheet<Test>("Sheet1") select ts;//truy vấn dữ liệu từ Sheet1 trong excel, và lưu kết quả vào biến hocVien.
+                    var test = from ts in excel.Worksheet<TestColumns>("Sheet1") select ts;//truy vấn dữ liệu từ Sheet1 trong excel, và lưu kết quả vào biến hocVien.
 
                     //test là từng row trong workSheet
                     foreach (var item in test)
@@ -101,7 +102,7 @@ namespace test.View
                 }
             }
         }
-        public void CreateDataToExcel(string nameFile, string action)
+        public void CreateDataToExcel(string nameFile)
         {
             //Tạo một DataTable mới để lưu trữ dữ liệu.
             dt = new DataTable(); 
@@ -114,7 +115,7 @@ namespace test.View
             dt.Columns.Add("CORRECT_ANSWER");
 
             //nạp dữ liệu vào dataTable, để đưa vào bảng tính Excel
-            if (action != "create")
+            if (modeCreate==false)
             {
                 getData();
             }
@@ -132,7 +133,7 @@ namespace test.View
                 worksheet.Cells[1, i + 1].Value = dt.Columns[i];//Thuộc tính này lấy hoặc đặt giá trị văn bản (text) của header của cột đó.
             }
 
-            if (action != "create")
+            if (modeCreate==false)
             {
                 // duyệt các row trừ tiêu đề(header) đã duyệt ở trên
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -161,7 +162,7 @@ namespace test.View
                 ans4.Clear();
 
                 //vì khi create file mới thì nó ko chạy được GetData() nên chưa có câu lệnh gán cho DatagridView
-                if (action == "create")
+                if (modeCreate)
                     questionsDtgv.DataSource = dt;
 
                 // Mở tệp Excel

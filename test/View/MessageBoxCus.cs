@@ -15,9 +15,9 @@ namespace test.View
     public partial class MessageBoxCus : Form
     {
         private bool ok;
-        private bool modeConfirm;
         private bool modeCreate;
-       
+
+
         public MessageBoxCus()
         {
             InitializeComponent();
@@ -27,18 +27,23 @@ namespace test.View
             get { return ok; }
             set { ok = value; }
         }
-        public bool ModeConfirm
+        public void InitModeTimeOut()
         {
-            get { return modeConfirm; }
-            set { modeConfirm = value; }
-        }
-        public bool ModeCreate
-        {
-            get { return modeCreate; }
-            set { modeCreate = value; }
+            ptError.Visible = true;
+            lbTimeOut.Visible = true;
+
+            lbContent.Visible = false;
+            lbTitle.Visible = false;
+
+            ptWarning.Visible = false;
+            ptConfirm.Visible = false;
+            ptExport.Visible = false;
         }
         public void InitModeCreate()
         {
+            modeCreate = true;
+
+            ptExport.Visible = true;
             lbTitle.Text = "CREATE";
             lbTitle.ForeColor = ColorTranslator.FromHtml("#00ABB3");
             tbnameFile.Focus();
@@ -47,24 +52,27 @@ namespace test.View
             ptError.Visible = false;
             ptWarning.Visible = false;
             ptConfirm.Visible = false;
-            ptExport.Visible = true;
         }
         public void InitModeConfirm()
         {
+            ptConfirm.Visible = true;
+
             lbTitle.Text = "CONFIRM";
-            lbTitle.ForeColor = ColorTranslator.FromHtml("#00dfc2");
+            lbTitle.ForeColor = ColorTranslator.FromHtml("#03C988");
             lbContent.ForeColor = ColorTranslator.FromHtml("#00dfc2");
+            tbnameFile.Visible = false;
+
             ptError.Visible = false;
             ptWarning.Visible = false;
-            ptConfirm.Visible = true;
         }
         public void InitModeWarning()
         {
-            lbTitle.Text = "WARNING";
-            lbTitle.ForeColor = ColorTranslator.FromHtml("#F16767");
-            lbContent.ForeColor= ColorTranslator.FromHtml("#F16767");
-            ptError.Visible = false;
             ptWarning.Visible = true;
+            lbTitle.Text = "WARNING";
+            lbTitle.ForeColor = ColorTranslator.FromHtml("#FF3CAC");
+            lbContent.ForeColor= ColorTranslator.FromHtml("#F16767");
+            tbnameFile.Visible = false;
+            ptError.Visible = false;
         }
         public string Content
         {
@@ -72,25 +80,20 @@ namespace test.View
         }
         private void btOk_Click(object sender, EventArgs e)
         {
-            if (modeConfirm)
-            {
-                Exam exam = new Exam();
-                exam.ShowDialog();
-                return;
-            }
+            OK = true;
             if (modeCreate)
             {
                 Main main= new Main();
                 main.Hide();
-                formCreate fC = new formCreate();
+                formCreate fC = new formCreate();   
                 //xử lý tạo mới excel
                 if (fC.LinkFile == "")
                 {
                     this.Close();//ẩn form tạo file
-
-                    new formCreate("create");
+                        
+                    //new formCreate("create");
                     //tạo file excel
-                    fC.CreateDataToExcel(tbnameFile.Text, "create");
+                    fC.CreateDataToExcel(tbnameFile.Text);
 
                     fC.LinkFile = tbnameFile.Text;
                     fC.ShowDialog();
@@ -98,36 +101,41 @@ namespace test.View
                 //xử lý export excel
                 else
                 {
-                    fC.CreateDataToExcel(tbnameFile.Text, "");
-                    this.Close();
+                    fC.CreateDataToExcel(tbnameFile.Text);
                 }
             }
-
             this.Close();
+
+            lbContent.Visible = true;
+            lbTitle.Visible = true;
+            lbTimeOut.Visible = false;
+            lbTitle.Text = "ERROR";
+            lbTitle.ForeColor = ColorTranslator.FromHtml("#DF2E38");
+            lbContent.ForeColor = ColorTranslator.FromHtml("#DF2E38");
+
             ptError.Visible = true;
             ptWarning.Visible = false;
             ptConfirm.Visible = false;
             ptExport.Visible = false;
-            modeConfirm= false;
+            
             modeCreate= false;
-            OK= true;
         }
         private void btCancel_Click(object sender, EventArgs e)
         {
-            if (modeCreate)
-            {
-                Main main = new Main();
-                main.ShowDialog();
-            }
+            OK = false;
 
             this.Close();
+            
+            lbTitle.ForeColor = ColorTranslator.FromHtml("#DF2E38");
+            lbContent.ForeColor = ColorTranslator.FromHtml("#DF2E38");
+            lbTitle.Text = "ERROR";
+
+            ptExport.Visible = false;
             ptError.Visible = true;
             ptWarning.Visible = false;
             ptConfirm.Visible = false;
             ptExport.Visible = false;
-            modeConfirm = false;
             modeCreate = false;
-            OK = false;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LinqToExcel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test.Code;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace test.View
@@ -15,9 +17,16 @@ namespace test.View
     public partial class Main : Form
     {
         private ImageList img;
-        private List<string> excelFiles = new List<string>();
         private static string[] files;
         MessageBoxCus messageBoxCus = new MessageBoxCus();
+
+        private List<TestModel> tests= new List<TestModel>();
+
+        public List<TestModel> Tests
+        {
+            get { return tests; }
+        }
+
         public Main()
         {
             InitializeComponent();
@@ -47,16 +56,13 @@ namespace test.View
         }
         public void LoadImageList()
         {
-            // Lấy đường dẫn của thư mục đã chọn
-            string path = Application.StartupPath + @"\\Resources\\";
             // Lấy danh sách các file Excel trong thư mục
-            files = Directory.GetFiles(path, "*.xlsx");
+            files = Directory.GetFiles(Application.StartupPath + @"\\Resources\\", "*.xlsx");
             //thêm vào List để quản lý
-            excelFiles.AddRange(files);
 
             img = new ImageList() { ImageSize = new Size(140, 152) };
 
-            for(int i=0;i<excelFiles.Count; i++)
+            for(int i=0;i<files.Length; i++)
             {
                 img.Images.Add(new Bitmap(Application.StartupPath + "\\image\\test.jpg"));
             }
@@ -84,8 +90,6 @@ namespace test.View
                 btDelete.FillColor2 = ColorTranslator.FromHtml("#10A19D");
                 btDelete.FillColor = ColorTranslator.FromHtml("#22A39F");
 
-                btCreateTest.FillColor2 = ColorTranslator.FromHtml("#10A19D");
-                btCreateTest.FillColor = ColorTranslator.FromHtml("#22A39F");
                 return;
             }
             btStartTest.FillColor = ColorTranslator.FromHtml("#B721FF");
@@ -97,8 +101,6 @@ namespace test.View
             btDelete.FillColor2 = ColorTranslator.FromHtml("#FF2525");
             btDelete.FillColor = ColorTranslator.FromHtml("#FFE53B"); 
 
-            btCreateTest.FillColor2 = ColorTranslator.FromHtml("#2BFF88");
-            btCreateTest.FillColor = ColorTranslator.FromHtml("#2BD2FF"); 
         }
         private void btDelete_Click(object sender, EventArgs e)
         {
@@ -152,39 +154,86 @@ namespace test.View
         }
         private void btCreateTest_Click(object sender, EventArgs e)
         {
-            messageBoxCus.ModeCreate = true;
             messageBoxCus.InitModeCreate();
             messageBoxCus.ShowDialog();
 
             if (messageBoxCus.OK)
             {
-                formCreate formCreate = new formCreate();//issues
+                //modeCreate
+                formCreate formCreate = new formCreate();
+                formCreate.ModeCreate= true;
                 formCreate.ShowDialog();
             }
         }
         private void btStartTest_Click(object sender, EventArgs e)
         {
             //check
-            if(listTests.SelectedItems.Count ==0) 
+            if(listTests.SelectedItems.Count == 0) 
             {
                 messageBoxCus.Content = "You haven't selected any test yet!!!";
                 messageBoxCus.ShowDialog();
                 return;
             }
+            string nameFile = listTests.SelectedItems[0].Text;  
+            // Lấy dữ liệu từ file Excel
+            string linkFile = Application.StartupPath + @"\\Resources\\" + nameFile + ".xlsx";
 
+            string etx = Path.GetExtension(linkFile);//lấy kiểu file xls là định dạng cũ, xlsx là mới
+            if (etx.ToLower().Equals(".xlsx"))//etx có thể là hoa hoặc thường=>thường
+            {
+                var excel = new ExcelQueryFactory(linkFile);// Tạo một đối tượng workBook, chứa các trang tính (workshet)
+
+                //lấy từng row trong sheet1 trả về một mảng chứa các row kiểu Test(..,..,..)
+                var arrTest = from ts in excel.Worksheet<TestColumns>("Sheet1") select ts;//truy vấn dữ liệu từ Sheet1 trong excel
+
+                //arrTest là mảng từng row trong workSheet
+                foreach (var item in arrTest)
+                {
+                    TestModel test= new TestModel(item.ID, item.Content, item.Answer1, item.Answer2, item.Answer3, item.Answer4, item.CorrectAnswer);
+                    tests.Add(test);
+                }
+            }
             ////mở form xác nhận
-            messageBoxCus.ModeConfirm = true;
             messageBoxCus.InitModeConfirm();
             messageBoxCus.Content = "Are you sure to take the test now?";
             messageBoxCus.ShowDialog();
-
             if (messageBoxCus.OK)
             {
                 Exam exam = new Exam();
+                exam.Tests= tests;
+                exam.InitDataTests();
                 exam.ShowDialog();
             }
         }
 
        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

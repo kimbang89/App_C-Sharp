@@ -14642,7 +14642,7 @@
   <data name="btDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAA+hJREFUeF7tm8trE1EUxuNGBd2IblwIigvRhaK1lDaJgtEWaZt0I6h9KWjF+qiP
+        DAAACwwBP0AiyAAAA+hJREFUeF7tm8trE1EUxuNGBd2IblwIigvRhaK1lDaJgtEWaZt0I6h9KWjF+qiP
         WhEstQq20LV1UUGruyqI/4Ar/wZFN7pQRLBK60o7M9dzkjPtzZ0zdTKZ3GTq/eAHbeY+zvfNvTeZ0CaM
         jIyMjIyilzjYtmkh1dFmJXODVip3MxTQF8fAsWjY2pdIJFZZ6dwZMDBvp3IiCmCsOSuVPYtj0zS1KyvV
         0ceZiAIMgaapTYn6jo1R3nkVXAk4B01Xe8L9WlxwdtZOZSeA8ZBMFMZYGnMhnW2l6WpPVrL9llwscJ8u
@@ -14739,7 +14739,7 @@
 </value>
   </data>
   <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>22, 11</value>
   </metadata>
   <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -15462,4 +15462,7 @@
         GDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGHAQEAOw==
 </value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>34</value>
+  </metadata>
 </root>

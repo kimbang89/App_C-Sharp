@@ -88,19 +88,19 @@ namespace test.View
              //xử lý các controls
             foreach (Control control in panel.Controls)
             {
-                if (control is Guna2CustomRadioButton radioButton && radioButton.Checked && !isGoBack )
+                if (control is Guna2CustomRadioButton radioButton && radioButton.Checked  )
                 {
                     return true;
                 }
             }
             return false;
         }
-        public void addAns()
+        public void AddAns()
         {
             //xử lý các controls
             foreach (Control control in panel.Controls)
             {
-                if (control is Guna2CustomRadioButton radioButton && radioButton.Checked && !isGoBack)
+                if (control is Guna2CustomRadioButton radioButton && radioButton.Checked )
                 {
                     mapAnswerItem = new AnsModel(ansNumber, selectedAns, tests[indexPageCurrent].AnsCorrect, radioButton.Name);
                     mapAnswers.Add(mapAnswerItem);
@@ -147,21 +147,9 @@ namespace test.View
         public void RestoreChecked()
         {
             int useCheckedCurrent;
-
-
-            if (!isGoBack)
-            {
-                ResetControl();
-            }
-
-            try
-            {
-                useCheckedCurrent= mapAnswers[indexPageCurrent].Id;
-            }
-            catch (Exception ex)
-            {
-                return;
-            }
+            
+            ResetControl();
+            useCheckedCurrent= mapAnswers[indexPageCurrent].Id;
 
             arrLabel[useCheckedCurrent].ForeColor = ColorTranslator.FromHtml("#62CDFF");
             arrPictureBoxTick[useCheckedCurrent].Visible = true;
@@ -308,19 +296,25 @@ namespace test.View
         }
         private void btPrevious_Click(object sender, EventArgs e)
         {
+            //trường hợp ở page mới nhất và đã checked
+            if(indexPageCurrent==mapAnswers.Count && CheckChecked())
+                AddAns();
+
             this.indexPageCurrent--;
+
             isGoBack = true;
 
-            label4.Text = (mapAnswers.Count).ToString();
-            label5.Text = indexPageCurrent.ToString();
+                            label4.Text = (mapAnswers.Count).ToString();
+                            label5.Text = indexPageCurrent.ToString();
 
-            string s = "";
-            foreach (AnsModel ans in mapAnswers)
-            {
-                s+= $" {indexPageCurrent} {ans.Id} {ans.UserAns} {ans.AnsCorrect} {ans.RBSelected} |";
-            }
-            lbAns.Text = s;
+                            string s = "";
+                            foreach (AnsModel ans in mapAnswers)
+                            {
+                                s+= $" {indexPageCurrent} {ans.Id} {ans.UserAns} {ans.AnsCorrect} {ans.RBSelected} |";
+                            }
+                            lbAns.Text = s;
 
+            //khôi phục các checked
             RestoreChecked();
 
             //kiểm tra chuyển trang
@@ -341,54 +335,46 @@ namespace test.View
                 btNext.Visible = true;
             }
             
-            lbGoBack.Text = isGoBack.ToString();
+                            lbGoBack.Text = isGoBack.ToString();
+
             InitDataTests();
         }
         private void btNext_Click(object sender, EventArgs e)
         {
-            if (isGoBack && indexPageCurrent == (tests.Count - 2))//khi page hiện tại bằng 
+            lbCountdown.Text = "60 S";
+////////////
+            this.indexPageCurrent++;
+
+            //trường hợp đang GoBack và đến page mới nhất(page này đã checked, vì đã checked thì pageCurrent=mapAnswers.Count-1)
+            if (isGoBack && indexPageCurrent != mapAnswers.Count)
+                    RestoreChecked();
+
+            //nếu isGoBack thì không thêm Checked
+            if (!isGoBack)
+                AddAns(); 
+
+            if (CheckChecked() == false || !isGoBack && (mapAnswers.Count) == (indexPageCurrent+1))//trong truường hợp Previous rồi Next thì bỏ qua những RBSelected
             {
-                isGoBack = false;
-            }
-            if (isGoBack)
-            {
-                this.indexPageCurrent++;
-                RestoreChecked();
-            }
-            if(indexPageCurrent != (tests.Count - 2))
-            {
-                addAns(); 
-            }
-            if (CheckChecked() == false && !isGoBack || (mapAnswers.Count) == indexPageCurrent)//trong truường hợp Previous rồi Next thì bỏ qua những RBSelected
-            {
-                lbGoBack.Text = isGoBack.ToString();
                 messageBoxCus.Content = "You haven't selected any option";
                 messageBoxCus.ShowDialog();
 
                 return;
             }
+            
+                            label4.Text = (mapAnswers.Count).ToString();
+                            label5.Text = indexPageCurrent.ToString();
 
-            if (!isGoBack)
-            {
-                this.indexPageCurrent++;
-            }
-            label4.Text = (mapAnswers.Count).ToString();
-            label5.Text = indexPageCurrent.ToString();
-            lbGoBack.Text = isGoBack.ToString();
-
-
-            string s = "";
-            foreach (AnsModel ans in mapAnswers)
-            {
-                s += $" {indexPageCurrent} {ans.Id} {ans.UserAns} {ans.AnsCorrect} {ans.RBSelected} |";
-            }
-            lbAns.Text = s;
+                            string s = "";
+                            foreach (AnsModel ans in mapAnswers)
+                            {
+                                s += $" {indexPageCurrent} {ans.Id} {ans.UserAns} {ans.AnsCorrect} {ans.RBSelected} |";
+                            }
+                            lbAns.Text = s;
 
             //kiểm tra chuyển trang
             //trường hợp = max amount tests
             if (indexPageCurrent == (tests.Count - 1))
             {
-                isGoBack = false;//nếu đang ở trang mới nhất...
                 btNext.Visible = false;
             }
             //trường hợp có 2 item trong tests
@@ -396,11 +382,19 @@ namespace test.View
             {
                 btPrevious.Visible = true;
             }
+                
+            //nếu đang ở page mới nhất và chưa checked
+            //( dành cho trường hợp isGoBack, Next đến Page mới nhất thì gán thành false)
+            if(isGoBack && indexPageCurrent == mapAnswers.Count)
+                isGoBack = false;
 
+                            lbGoBack.Text = isGoBack.ToString();
 
+            //nếu isGoBack thì chạy hàm ResetChecked ở trên
+            //và bỏ qua hàm làm mới Control(ResetControl)
             if (!isGoBack)
                 ResetControl(true);
-
+            
             InitDataTests();
         }
 

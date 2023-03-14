@@ -29,6 +29,7 @@ namespace test.View
         private string selectedAns;
         private bool isGoBack = false;
         private int point = 0;
+        private int totalPoint = 0;
 
         //Manager Model
         private List<TestModel> tests = new List<TestModel>();//list ques
@@ -338,9 +339,6 @@ namespace test.View
             
                             lbGoBack.Text = isGoBack.ToString();
 
-           
-            
-
             //khởi tạo dữ liệu
             InitDataTests();
         }
@@ -353,6 +351,9 @@ namespace test.View
             if(isGoBack)
                 answers[indexPageCurrent] = GetCheckedAnswer();
             
+            //nếu isGoBack thì không thêm Checked
+            if (!isGoBack)
+                AddAns();
 
             this.indexPageCurrent++;
 
@@ -360,9 +361,6 @@ namespace test.View
             if (isGoBack && indexPageCurrent != answers.Count)
                     RestoreChecked();
 
-            //nếu isGoBack thì không thêm Checked
-            if (!isGoBack)
-                AddAns();
 
             if (CheckChecked() == false || !isGoBack && (answers.Count) == (indexPageCurrent+1))//trong truường hợp Previous rồi Next thì bỏ qua những RBSelected
             {
@@ -444,8 +442,9 @@ namespace test.View
                 {
                     point += 150;
                 }
+                totalPoint += 150;
             });
-            messageBoxCus.Content=point.ToString();
+            messageBoxCus.Content=$"{point}/{totalPoint}";
             messageBoxCus.InitModeFinish();
             messageBoxCus.ShowDialog();
 

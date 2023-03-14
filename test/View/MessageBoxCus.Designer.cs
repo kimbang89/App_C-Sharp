@@ -32,26 +32,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageBoxCus));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbPoint = new System.Windows.Forms.Label();
             this.lbTimeOut = new System.Windows.Forms.Label();
-            this.tbnameFile = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbTitle = new System.Windows.Forms.Label();
+            this.ptFinish = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptExport = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptConfirm = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lbContent = new System.Windows.Forms.Label();
             this.btCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btOk = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.lbTitle = new System.Windows.Forms.Label();
             this.ptWarning = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptError = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.tbnameFile = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbContent = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.ptFinish = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lbPoint = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptFinish)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptConfirm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptError)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptFinish)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -84,6 +84,20 @@
             this.guna2Panel1.Size = new System.Drawing.Size(779, 209);
             this.guna2Panel1.TabIndex = 1;
             // 
+            // lbPoint
+            // 
+            this.lbPoint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbPoint.Font = new System.Drawing.Font("Showcard Gothic", 40.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPoint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(209)))));
+            this.lbPoint.Location = new System.Drawing.Point(292, 64);
+            this.lbPoint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPoint.Name = "lbPoint";
+            this.lbPoint.Size = new System.Drawing.Size(410, 83);
+            this.lbPoint.TabIndex = 96;
+            this.lbPoint.Text = "100/";
+            this.lbPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbPoint.Visible = false;
+            // 
             // lbTimeOut
             // 
             this.lbTimeOut.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -98,30 +112,30 @@
             this.lbTimeOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbTimeOut.Visible = false;
             // 
-            // tbnameFile
+            // lbTitle
             // 
-            this.tbnameFile.BorderThickness = 0;
-            this.tbnameFile.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbnameFile.DefaultText = "";
-            this.tbnameFile.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbnameFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbnameFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbnameFile.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbnameFile.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(243)))), ((int)(((byte)(252)))));
-            this.tbnameFile.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbnameFile.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbnameFile.ForeColor = System.Drawing.Color.Black;
-            this.tbnameFile.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbnameFile.Location = new System.Drawing.Point(321, 77);
-            this.tbnameFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbnameFile.Name = "tbnameFile";
-            this.tbnameFile.PasswordChar = '\0';
-            this.tbnameFile.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(197)))), ((int)(((byte)(252)))));
-            this.tbnameFile.PlaceholderText = "NameFile";
-            this.tbnameFile.SelectedText = "";
-            this.tbnameFile.Size = new System.Drawing.Size(376, 55);
-            this.tbnameFile.TabIndex = 93;
-            this.tbnameFile.Visible = false;
+            this.lbTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
+            this.lbTitle.Location = new System.Drawing.Point(312, 0);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(397, 64);
+            this.lbTitle.TabIndex = 2;
+            this.lbTitle.Text = "ERROR";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ptFinish
+            // 
+            this.ptFinish.Image = ((System.Drawing.Image)(resources.GetObject("ptFinish.Image")));
+            this.ptFinish.ImageRotate = 0F;
+            this.ptFinish.Location = new System.Drawing.Point(12, 3);
+            this.ptFinish.Name = "ptFinish";
+            this.ptFinish.Size = new System.Drawing.Size(273, 207);
+            this.ptFinish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptFinish.TabIndex = 95;
+            this.ptFinish.TabStop = false;
+            this.ptFinish.Visible = false;
             // 
             // ptExport
             // 
@@ -146,17 +160,6 @@
             this.ptConfirm.TabIndex = 90;
             this.ptConfirm.TabStop = false;
             this.ptConfirm.Visible = false;
-            // 
-            // lbContent
-            // 
-            this.lbContent.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold);
-            this.lbContent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(44)))), ((int)(((byte)(109)))));
-            this.lbContent.Location = new System.Drawing.Point(263, 92);
-            this.lbContent.Name = "lbContent";
-            this.lbContent.Size = new System.Drawing.Size(504, 33);
-            this.lbContent.TabIndex = 88;
-            this.lbContent.Text = "label1";
-            this.lbContent.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btCancel
             // 
@@ -198,19 +201,6 @@
             this.btOk.Text = "OK";
             this.btOk.Click += new System.EventHandler(this.btOk_Click);
             // 
-            // lbTitle
-            // 
-            this.lbTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
-            this.lbTitle.Location = new System.Drawing.Point(312, 0);
-            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(397, 64);
-            this.lbTitle.TabIndex = 2;
-            this.lbTitle.Text = "ERROR";
-            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ptWarning
             // 
             this.ptWarning.Image = ((System.Drawing.Image)(resources.GetObject("ptWarning.Image")));
@@ -234,6 +224,42 @@
             this.ptError.TabIndex = 0;
             this.ptError.TabStop = false;
             // 
+            // tbnameFile
+            // 
+            this.tbnameFile.BorderThickness = 0;
+            this.tbnameFile.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbnameFile.DefaultText = "";
+            this.tbnameFile.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbnameFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbnameFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbnameFile.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbnameFile.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(243)))), ((int)(((byte)(252)))));
+            this.tbnameFile.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbnameFile.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbnameFile.ForeColor = System.Drawing.Color.Black;
+            this.tbnameFile.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbnameFile.Location = new System.Drawing.Point(321, 77);
+            this.tbnameFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbnameFile.Name = "tbnameFile";
+            this.tbnameFile.PasswordChar = '\0';
+            this.tbnameFile.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(197)))), ((int)(((byte)(252)))));
+            this.tbnameFile.PlaceholderText = "NameFile";
+            this.tbnameFile.SelectedText = "";
+            this.tbnameFile.Size = new System.Drawing.Size(376, 55);
+            this.tbnameFile.TabIndex = 93;
+            this.tbnameFile.Visible = false;
+            // 
+            // lbContent
+            // 
+            this.lbContent.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold);
+            this.lbContent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(44)))), ((int)(((byte)(109)))));
+            this.lbContent.Location = new System.Drawing.Point(263, 92);
+            this.lbContent.Name = "lbContent";
+            this.lbContent.Size = new System.Drawing.Size(504, 33);
+            this.lbContent.TabIndex = 88;
+            this.lbContent.Text = "label1";
+            this.lbContent.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
@@ -242,33 +268,6 @@
             // timer1
             // 
             this.timer1.Interval = 1000;
-            // 
-            // ptFinish
-            // 
-            this.ptFinish.Image = ((System.Drawing.Image)(resources.GetObject("ptFinish.Image")));
-            this.ptFinish.ImageRotate = 0F;
-            this.ptFinish.Location = new System.Drawing.Point(12, 3);
-            this.ptFinish.Name = "ptFinish";
-            this.ptFinish.Size = new System.Drawing.Size(273, 207);
-            this.ptFinish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptFinish.TabIndex = 95;
-            this.ptFinish.TabStop = false;
-            this.ptFinish.Visible = false;
-            // 
-            // lbPoint
-            // 
-            this.lbPoint.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbPoint.AutoSize = true;
-            this.lbPoint.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPoint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.lbPoint.Location = new System.Drawing.Point(453, 70);
-            this.lbPoint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbPoint.Name = "lbPoint";
-            this.lbPoint.Size = new System.Drawing.Size(108, 62);
-            this.lbPoint.TabIndex = 96;
-            this.lbPoint.Text = "100";
-            this.lbPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbPoint.Visible = false;
             // 
             // MessageBoxCus
             // 
@@ -282,12 +281,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageBox";
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptFinish)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptConfirm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptError)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptFinish)).EndInit();
             this.ResumeLayout(false);
 
         }

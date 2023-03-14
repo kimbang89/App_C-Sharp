@@ -18,8 +18,9 @@ namespace test.View
     {
         private ImageList img;
         private static string[] files;
-        MessageBoxCus messageBoxCus = new MessageBoxCus();
+        private DataTable dt;
 
+        MessageBoxCus messageBoxCus = new MessageBoxCus();
         private List<TestModel> tests= new List<TestModel>();
 
         public List<TestModel> Tests
@@ -45,6 +46,27 @@ namespace test.View
                 ListViewItem parentItem = new ListViewItem(Path.GetFileNameWithoutExtension(files[i]), i);
                 listTests.Items.Add(parentItem);
             }
+            //Tạo một DataTable mới để lưu trữ Danh sách Rank Users
+            dt = new DataTable(); 
+            dt.Columns.Add("Rank");
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Score");
+            dt.Columns.Add("History");
+
+            dt.Rows.Add(1,"Tran Kim Bang",999,"8/9/2003");
+            dt.AcceptChanges();
+            tableRank.DataSource= dt;
+
+            //Tạo một DataTable mới để lưu trữ Danh sách user đã test .
+            dt = new DataTable();
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Score");
+            dt.Columns.Add("History");
+
+            dt.Rows.Add("Tran Kim Bang", 999, "8/9/2003");
+            dt.AcceptChanges();
+            tableHistory.DataSource = dt;
+
             //phân quuyền admin user
             //Login login = new Login();
             //if (login.Role != "admin")

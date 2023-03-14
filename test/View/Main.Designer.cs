@@ -30,9 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.test = new System.Windows.Forms.TabPage();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -42,7 +45,7 @@
             this.btStartTest = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btCreateTest = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.tabHistory = new System.Windows.Forms.TabPage();
+            this.tabRank = new System.Windows.Forms.TabPage();
             this.tabHome = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -54,33 +57,39 @@
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.questionsDtgv = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.tableRank = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.tabHistory = new System.Windows.Forms.TabPage();
+            this.tableHistory = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2TabControl1.SuspendLayout();
             this.test.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
-            this.tabHistory.SuspendLayout();
+            this.tabRank.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionsDtgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableRank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
+            this.tabHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TabControl1
             // 
             this.guna2TabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.guna2TabControl1.Controls.Add(this.test);
-            this.guna2TabControl1.Controls.Add(this.tabHistory);
             this.guna2TabControl1.Controls.Add(this.tabHome);
+            this.guna2TabControl1.Controls.Add(this.test);
+            this.guna2TabControl1.Controls.Add(this.tabRank);
+            this.guna2TabControl1.Controls.Add(this.tabHistory);
             this.guna2TabControl1.ImageList = this.imageList1;
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
-            this.guna2TabControl1.Location = new System.Drawing.Point(-3, 94);
+            this.guna2TabControl1.Location = new System.Drawing.Point(-3, 122);
             this.guna2TabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.Padding = new System.Drawing.Point(0, 0);
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(1517, 808);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1517, 780);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(152)))), ((int)(((byte)(185)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,7 +121,7 @@
             this.test.Location = new System.Drawing.Point(184, 4);
             this.test.Margin = new System.Windows.Forms.Padding(0);
             this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(1329, 800);
+            this.test.Size = new System.Drawing.Size(1329, 772);
             this.test.TabIndex = 0;
             this.test.Text = "Tests";
             // 
@@ -247,28 +256,27 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1126, 140);
             this.guna2GradientPanel1.TabIndex = 87;
             // 
-            // tabHistory
+            // tabRank
             // 
-            this.tabHistory.BackColor = System.Drawing.Color.White;
-            this.tabHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabHistory.Controls.Add(this.questionsDtgv);
-            this.tabHistory.Controls.Add(this.guna2PictureBox4);
-            this.tabHistory.ImageIndex = 0;
-            this.tabHistory.Location = new System.Drawing.Point(184, 4);
-            this.tabHistory.Name = "tabHistory";
-            this.tabHistory.Size = new System.Drawing.Size(1329, 800);
-            this.tabHistory.TabIndex = 1;
-            this.tabHistory.Text = "History";
+            this.tabRank.BackColor = System.Drawing.Color.White;
+            this.tabRank.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabRank.Controls.Add(this.tableRank);
+            this.tabRank.Controls.Add(this.guna2PictureBox4);
+            this.tabRank.Location = new System.Drawing.Point(184, 4);
+            this.tabRank.Name = "tabRank";
+            this.tabRank.Size = new System.Drawing.Size(1329, 800);
+            this.tabRank.TabIndex = 1;
+            this.tabRank.Text = "Rank";
             // 
             // tabHome
             // 
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(224)))), ((int)(((byte)(223)))));
             this.tabHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabHome.BackgroundImage")));
-            this.tabHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tabHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabHome.ImageIndex = 1;
             this.tabHome.Location = new System.Drawing.Point(184, 4);
             this.tabHome.Name = "tabHome";
-            this.tabHome.Size = new System.Drawing.Size(1313, 800);
+            this.tabHome.Size = new System.Drawing.Size(1329, 772);
             this.tabHome.TabIndex = 2;
             this.tabHome.Text = "Home";
             // 
@@ -295,7 +303,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 30F);
-            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Location = new System.Drawing.Point(26, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(604, 63);
             this.label1.TabIndex = 91;
@@ -334,9 +342,9 @@
             this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(640, 12);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(660, 1);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(95, 64);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(95, 59);
             this.guna2PictureBox2.TabIndex = 93;
             this.guna2PictureBox2.TabStop = false;
             // 
@@ -360,62 +368,61 @@
             this.guna2Elipse5.BorderRadius = 30;
             this.guna2Elipse5.TargetControl = this.listTests;
             // 
-            // questionsDtgv
+            // tableRank
             // 
-            this.questionsDtgv.AllowUserToAddRows = false;
-            this.questionsDtgv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.questionsDtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.questionsDtgv.BackgroundColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(161)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(161)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.questionsDtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.questionsDtgv.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(134)))), ((int)(((byte)(183)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.questionsDtgv.DefaultCellStyle = dataGridViewCellStyle3;
-            this.questionsDtgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.questionsDtgv.Location = new System.Drawing.Point(3, 2);
-            this.questionsDtgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.questionsDtgv.Name = "questionsDtgv";
-            this.questionsDtgv.ReadOnly = true;
-            this.questionsDtgv.RowHeadersVisible = false;
-            this.questionsDtgv.RowHeadersWidth = 62;
-            this.questionsDtgv.RowTemplate.Height = 28;
-            this.questionsDtgv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.questionsDtgv.Size = new System.Drawing.Size(1323, 401);
-            this.questionsDtgv.TabIndex = 94;
-            this.questionsDtgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.questionsDtgv.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.questionsDtgv.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.questionsDtgv.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.questionsDtgv.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.questionsDtgv.ThemeStyle.BackColor = System.Drawing.Color.DarkGray;
-            this.questionsDtgv.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.questionsDtgv.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.questionsDtgv.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.questionsDtgv.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.questionsDtgv.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.questionsDtgv.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.questionsDtgv.ThemeStyle.HeaderStyle.Height = 30;
-            this.questionsDtgv.ThemeStyle.ReadOnly = true;
-            this.questionsDtgv.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.questionsDtgv.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.questionsDtgv.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.questionsDtgv.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.questionsDtgv.ThemeStyle.RowsStyle.Height = 28;
-            this.questionsDtgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.questionsDtgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.tableRank.AllowUserToAddRows = false;
+            this.tableRank.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.tableRank.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(161)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(161)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableRank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.tableRank.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(134)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableRank.DefaultCellStyle = dataGridViewCellStyle12;
+            this.tableRank.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.tableRank.Location = new System.Drawing.Point(3, 2);
+            this.tableRank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableRank.Name = "tableRank";
+            this.tableRank.ReadOnly = true;
+            this.tableRank.RowHeadersVisible = false;
+            this.tableRank.RowHeadersWidth = 62;
+            this.tableRank.RowTemplate.Height = 28;
+            this.tableRank.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tableRank.Size = new System.Drawing.Size(1323, 401);
+            this.tableRank.TabIndex = 94;
+            this.tableRank.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.tableRank.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.tableRank.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.tableRank.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.tableRank.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.tableRank.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.tableRank.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.tableRank.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.tableRank.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.tableRank.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.tableRank.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.tableRank.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.tableRank.ThemeStyle.HeaderStyle.Height = 30;
+            this.tableRank.ThemeStyle.ReadOnly = true;
+            this.tableRank.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.tableRank.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tableRank.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.tableRank.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.tableRank.ThemeStyle.RowsStyle.Height = 28;
+            this.tableRank.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.tableRank.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // guna2PictureBox4
             // 
@@ -427,6 +434,84 @@
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox4.TabIndex = 95;
             this.guna2PictureBox4.TabStop = false;
+            // 
+            // tabHistory
+            // 
+            this.tabHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(224)))), ((int)(((byte)(223)))));
+            this.tabHistory.Controls.Add(this.tableHistory);
+            this.tabHistory.Controls.Add(this.guna2Panel1);
+            this.tabHistory.Location = new System.Drawing.Point(184, 4);
+            this.tabHistory.Name = "tabHistory";
+            this.tabHistory.Size = new System.Drawing.Size(1329, 772);
+            this.tabHistory.TabIndex = 3;
+            this.tabHistory.Text = "History";
+            // 
+            // tableHistory
+            // 
+            this.tableHistory.AllowUserToAddRows = false;
+            this.tableHistory.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.tableHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.tableHistory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(224)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(161)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(161)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.tableHistory.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(134)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableHistory.DefaultCellStyle = dataGridViewCellStyle9;
+            this.tableHistory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.tableHistory.Location = new System.Drawing.Point(0, 0);
+            this.tableHistory.Margin = new System.Windows.Forms.Padding(0);
+            this.tableHistory.Name = "tableHistory";
+            this.tableHistory.ReadOnly = true;
+            this.tableHistory.RowHeadersVisible = false;
+            this.tableHistory.RowHeadersWidth = 62;
+            this.tableHistory.RowTemplate.Height = 28;
+            this.tableHistory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tableHistory.Size = new System.Drawing.Size(1323, 401);
+            this.tableHistory.TabIndex = 95;
+            this.tableHistory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.tableHistory.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.tableHistory.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.tableHistory.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.tableHistory.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.tableHistory.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(224)))), ((int)(((byte)(223)))));
+            this.tableHistory.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.tableHistory.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.tableHistory.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.tableHistory.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.tableHistory.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.tableHistory.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.tableHistory.ThemeStyle.HeaderStyle.Height = 30;
+            this.tableHistory.ThemeStyle.ReadOnly = true;
+            this.tableHistory.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.tableHistory.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tableHistory.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.tableHistory.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.tableHistory.ThemeStyle.RowsStyle.Height = 28;
+            this.tableHistory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.tableHistory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(224)))), ((int)(((byte)(223)))));
+            this.guna2Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Panel1.BackgroundImage")));
+            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 404);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1317, 372);
+            this.guna2Panel1.TabIndex = 96;
             // 
             // Main
             // 
@@ -447,11 +532,13 @@
             this.test.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
-            this.tabHistory.ResumeLayout(false);
+            this.tabRank.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionsDtgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableRank)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
+            this.tabHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,7 +556,7 @@
         private Guna.UI2.WinForms.Guna2Button btnClose;
         private Guna.UI2.WinForms.Guna2GradientButton btDelete;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private System.Windows.Forms.TabPage tabHistory;
+        private System.Windows.Forms.TabPage tabRank;
         private System.Windows.Forms.TabPage tabHome;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ListView listTests;
@@ -479,7 +566,10 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
-        private Guna.UI2.WinForms.Guna2DataGridView questionsDtgv;
+        private Guna.UI2.WinForms.Guna2DataGridView tableRank;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
+        private System.Windows.Forms.TabPage tabHistory;
+        private Guna.UI2.WinForms.Guna2DataGridView tableHistory;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

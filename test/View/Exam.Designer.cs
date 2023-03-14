@@ -33,7 +33,7 @@
             this.btBack = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btExit = new Guna.UI2.WinForms.Guna2Button();
             this.btPrevious = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btStartTest = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btSubmit = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btNext = new Guna.UI2.WinForms.Guna2GradientButton();
             this.radioBt2 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.tick1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -155,30 +155,31 @@
             this.btPrevious.Text = "Previous";
             this.btPrevious.Click += new System.EventHandler(this.btPrevious_Click);
             // 
-            // btStartTest
+            // btSubmit
             // 
-            this.btStartTest.BorderRadius = 20;
-            this.btStartTest.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btStartTest.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btStartTest.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btStartTest.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btStartTest.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btStartTest.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(161)))), ((int)(((byte)(157)))));
-            this.btStartTest.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(159)))));
-            this.btStartTest.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btStartTest.ForeColor = System.Drawing.Color.White;
-            this.btStartTest.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(221)))), ((int)(((byte)(214)))));
-            this.btStartTest.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.btStartTest.Image = ((System.Drawing.Image)(resources.GetObject("btStartTest.Image")));
-            this.btStartTest.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btStartTest.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btStartTest.ImageSize = new System.Drawing.Size(30, 30);
-            this.btStartTest.Location = new System.Drawing.Point(1242, 90);
-            this.btStartTest.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.btStartTest.Name = "btStartTest";
-            this.btStartTest.Size = new System.Drawing.Size(245, 52);
-            this.btStartTest.TabIndex = 91;
-            this.btStartTest.Text = "Submit";
+            this.btSubmit.BorderRadius = 20;
+            this.btSubmit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btSubmit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btSubmit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btSubmit.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btSubmit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btSubmit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(161)))), ((int)(((byte)(157)))));
+            this.btSubmit.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(163)))), ((int)(((byte)(159)))));
+            this.btSubmit.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSubmit.ForeColor = System.Drawing.Color.White;
+            this.btSubmit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(221)))), ((int)(((byte)(214)))));
+            this.btSubmit.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btSubmit.Image = ((System.Drawing.Image)(resources.GetObject("btSubmit.Image")));
+            this.btSubmit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btSubmit.ImageOffset = new System.Drawing.Point(20, 0);
+            this.btSubmit.ImageSize = new System.Drawing.Size(30, 30);
+            this.btSubmit.Location = new System.Drawing.Point(1242, 90);
+            this.btSubmit.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.btSubmit.Name = "btSubmit";
+            this.btSubmit.Size = new System.Drawing.Size(245, 52);
+            this.btSubmit.TabIndex = 91;
+            this.btSubmit.Text = "Submit";
+            this.btSubmit.Click += new System.EventHandler(this.btSubmit_Click);
             // 
             // btNext
             // 
@@ -690,7 +691,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btPrevious);
             this.Controls.Add(this.btNext);
-            this.Controls.Add(this.btStartTest);
+            this.Controls.Add(this.btSubmit);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.btBack);
             this.Controls.Add(this.guna2ShadowPanel3);
@@ -721,7 +722,7 @@
         private Guna.UI2.WinForms.Guna2CircleButton btBack;
         private Guna.UI2.WinForms.Guna2Button btExit;
         private Guna.UI2.WinForms.Guna2GradientButton btPrevious;
-        private Guna.UI2.WinForms.Guna2GradientButton btStartTest;
+        private Guna.UI2.WinForms.Guna2GradientButton btSubmit;
         private Guna.UI2.WinForms.Guna2GradientButton btNext;
         private Guna.UI2.WinForms.Guna2CustomRadioButton radioBt2;
         private Guna.UI2.WinForms.Guna2PictureBox tick1;

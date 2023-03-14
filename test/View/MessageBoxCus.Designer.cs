@@ -44,11 +44,14 @@
             this.ptError = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ptFinish = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lbPoint = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptConfirm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptFinish)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -64,16 +67,18 @@
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderThickness = 5;
+            this.guna2Panel1.Controls.Add(this.lbPoint);
             this.guna2Panel1.Controls.Add(this.lbTimeOut);
-            this.guna2Panel1.Controls.Add(this.tbnameFile);
+            this.guna2Panel1.Controls.Add(this.lbTitle);
+            this.guna2Panel1.Controls.Add(this.ptFinish);
             this.guna2Panel1.Controls.Add(this.ptExport);
             this.guna2Panel1.Controls.Add(this.ptConfirm);
-            this.guna2Panel1.Controls.Add(this.lbContent);
             this.guna2Panel1.Controls.Add(this.btCancel);
             this.guna2Panel1.Controls.Add(this.btOk);
-            this.guna2Panel1.Controls.Add(this.lbTitle);
             this.guna2Panel1.Controls.Add(this.ptWarning);
             this.guna2Panel1.Controls.Add(this.ptError);
+            this.guna2Panel1.Controls.Add(this.tbnameFile);
+            this.guna2Panel1.Controls.Add(this.lbContent);
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(779, 209);
@@ -196,7 +201,7 @@
             // lbTitle
             // 
             this.lbTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
             this.lbTitle.Location = new System.Drawing.Point(312, 0);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -238,6 +243,33 @@
             // 
             this.timer1.Interval = 1000;
             // 
+            // ptFinish
+            // 
+            this.ptFinish.Image = ((System.Drawing.Image)(resources.GetObject("ptFinish.Image")));
+            this.ptFinish.ImageRotate = 0F;
+            this.ptFinish.Location = new System.Drawing.Point(12, 3);
+            this.ptFinish.Name = "ptFinish";
+            this.ptFinish.Size = new System.Drawing.Size(273, 207);
+            this.ptFinish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptFinish.TabIndex = 95;
+            this.ptFinish.TabStop = false;
+            this.ptFinish.Visible = false;
+            // 
+            // lbPoint
+            // 
+            this.lbPoint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbPoint.AutoSize = true;
+            this.lbPoint.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPoint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.lbPoint.Location = new System.Drawing.Point(453, 70);
+            this.lbPoint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPoint.Name = "lbPoint";
+            this.lbPoint.Size = new System.Drawing.Size(108, 62);
+            this.lbPoint.TabIndex = 96;
+            this.lbPoint.Text = "100";
+            this.lbPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbPoint.Visible = false;
+            // 
             // MessageBoxCus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,10 +282,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageBox";
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptConfirm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptFinish)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,5 +307,7 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Label lbTimeOut;
         private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2PictureBox ptFinish;
+        private System.Windows.Forms.Label lbPoint;
     }
 }

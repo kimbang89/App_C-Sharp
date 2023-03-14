@@ -22,15 +22,18 @@ namespace test.View
         //Utility
         private AnsModel mapAnswerItem;
         MessageBoxCus messageBoxCus = new MessageBoxCus();
+
         //Property
         private int indexPageCurrent = 0;
-        private int ansNumber = 0;
+        private int ansNumber = 0;//các giá trị arrContol bắt đầu từ 0, nên ansNumber cũng vậy
         private string selectedAns;
-        private bool allowNext = false;
         private bool isGoBack = false;
-        //List Manager
+        private int point = 0;
+
+        //Manager Model
         private List<TestModel> tests = new List<TestModel>();//list ques
-        private List<AnsModel> mapAnswers = new List<AnsModel>();//listAns
+        private List<AnsModel> answers = new List<AnsModel>();//listAns
+
         //List Manager Control
         private List<Guna2PictureBox> arrPictureBoxTick= new List<Guna2PictureBox>();
         private List<System.Windows.Forms.Label> arrLabel= new List<System.Windows.Forms.Label>();
@@ -49,34 +52,17 @@ namespace test.View
 
 
 
-        public bool WarningExitTest()
+        public bool WarningMessage(string mess= "Are you sure you want to exit now?")
         {
             messageBoxCus.InitModeWarning();
-            messageBoxCus.Content = "Are you sure you want to exit now?";
+            messageBoxCus.Content = mess;
             messageBoxCus.ShowDialog();
 
             return messageBoxCus.OK ? true : false;
         }
-        public bool ValidateEmpty(string textBoxEmpty, string message)
-        {
-            if (textBoxEmpty == "")
-            {
-                messageBoxCus.Content = "Please enter a " + message;
-                messageBoxCus.ShowDialog();
-                return true;
-            }
-            return false;
-        }
         public void InitDataTests()
         {
-            try
-            {
-
             btQuestion.Text = btQuestion.Text.Substring(0, 9) + tests[indexPageCurrent].Id;
-            }catch(Exception ex)
-            {
-                return;
-            }
             content.Text = tests[indexPageCurrent].Content;
             ans1.Text = tests[indexPageCurrent].AnsOne;
             ans2.Text = tests[indexPageCurrent].AnsTwo;
@@ -103,9 +89,20 @@ namespace test.View
                 if (control is Guna2CustomRadioButton radioButton && radioButton.Checked )
                 {
                     mapAnswerItem = new AnsModel(ansNumber, selectedAns, tests[indexPageCurrent].AnsCorrect, radioButton.Name);
-                    mapAnswers.Add(mapAnswerItem);
+                    answers.Add(mapAnswerItem);
                 }
             }
+        }
+        public AnsModel GetCheckedAnswer()
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is Guna2CustomRadioButton radioButton && radioButton.Checked)
+                {
+                    mapAnswerItem = new AnsModel(ansNumber, selectedAns, tests[indexPageCurrent].AnsCorrect, radioButton.Name);
+                }
+            }
+            return mapAnswerItem;
         }
         public void ResetControl(bool next = false)
         {
@@ -146,10 +143,8 @@ namespace test.View
 
         public void RestoreChecked()
         {
-            int useCheckedCurrent;
-            
             ResetControl();
-            useCheckedCurrent= mapAnswers[indexPageCurrent].Id;
+            int useCheckedCurrent= answers[indexPageCurrent].AnsNumber;
 
             arrLabel[useCheckedCurrent].ForeColor = ColorTranslator.FromHtml("#62CDFF");
             arrPictureBoxTick[useCheckedCurrent].Visible = true;
@@ -171,6 +166,7 @@ namespace test.View
         private void Exam_Load(object sender, EventArgs e)
         {
             btPrevious.Visible = false;
+            btSubmit.Visible = false;
 
             //getControls into List
             foreach (Control control in panel.Controls)
@@ -199,7 +195,7 @@ namespace test.View
         }
         private void btBack_Click(object sender, EventArgs e)
         {
-            if (WarningExitTest()==false)
+            if (WarningMessage()==false)
                 return;
 
             timer1.Stop();
@@ -210,7 +206,7 @@ namespace test.View
         }
         private void btExit_Click(object sender, EventArgs e)
         {
-            if (WarningExitTest())
+            if (WarningMessage())
                 Application.Exit();
         }
        
@@ -297,20 +293,25 @@ namespace test.View
         private void btPrevious_Click(object sender, EventArgs e)
         {
             //trường hợp ở page mới nhất và đã checked
-            if(indexPageCurrent==mapAnswers.Count && CheckChecked())
+            if(indexPageCurrent==answers.Count && CheckChecked())
                 AddAns();
+
+
+            //sữa giá trị in isGoBack
+            if(isGoBack)
+                answers[indexPageCurrent] = GetCheckedAnswer();
 
             this.indexPageCurrent--;
 
             isGoBack = true;
 
-                            label4.Text = (mapAnswers.Count).ToString();
+                            label4.Text = (answers.Count).ToString();
                             label5.Text = indexPageCurrent.ToString();
 
                             string s = "";
-                            foreach (AnsModel ans in mapAnswers)
+                            foreach (AnsModel ans in answers)
                             {
-                                s+= $" {indexPageCurrent} {ans.Id} {ans.UserAns} {ans.AnsCorrect} {ans.RBSelected} |";
+                                s+= $" {ans.AnsNumber} {ans.UserAns} {ans.AnsCorrect} {ans.RBSelected} |";
                             }
                             lbAns.Text = s;
 
@@ -337,23 +338,33 @@ namespace test.View
             
                             lbGoBack.Text = isGoBack.ToString();
 
+           
+            
+
+            //khởi tạo dữ liệu
             InitDataTests();
         }
         private void btNext_Click(object sender, EventArgs e)
         {
             lbCountdown.Text = "60 S";
-////////////
+            ////////////
+           
+            //sữa giá trị in isGoBack
+            if(isGoBack)
+                answers[indexPageCurrent] = GetCheckedAnswer();
+            
+
             this.indexPageCurrent++;
 
-            //trường hợp đang GoBack và đến page mới nhất(page này đã checked, vì đã checked thì pageCurrent=mapAnswers.Count-1)
-            if (isGoBack && indexPageCurrent != mapAnswers.Count)
+            //isGoBack và đến page mới nhất(page này đã checked, vì đã checked thì pageCurrent=answers.Count-1)
+            if (isGoBack && indexPageCurrent != answers.Count)
                     RestoreChecked();
 
             //nếu isGoBack thì không thêm Checked
             if (!isGoBack)
-                AddAns(); 
+                AddAns();
 
-            if (CheckChecked() == false || !isGoBack && (mapAnswers.Count) == (indexPageCurrent+1))//trong truường hợp Previous rồi Next thì bỏ qua những RBSelected
+            if (CheckChecked() == false || !isGoBack && (answers.Count) == (indexPageCurrent+1))//trong truường hợp Previous rồi Next thì bỏ qua những RBSelected
             {
                 messageBoxCus.Content = "You haven't selected any option";
                 messageBoxCus.ShowDialog();
@@ -361,13 +372,13 @@ namespace test.View
                 return;
             }
             
-                            label4.Text = (mapAnswers.Count).ToString();
+                            label4.Text = (answers.Count).ToString();
                             label5.Text = indexPageCurrent.ToString();
 
                             string s = "";
-                            foreach (AnsModel ans in mapAnswers)
+                            foreach (AnsModel ans in answers)
                             {
-                                s += $" {indexPageCurrent} {ans.Id} {ans.UserAns} {ans.AnsCorrect} {ans.RBSelected} |";
+                                s += $"{ans.AnsNumber} {ans.UserAns} {ans.AnsCorrect} {ans.RBSelected} |";
                             }
                             lbAns.Text = s;
 
@@ -385,7 +396,7 @@ namespace test.View
                 
             //nếu đang ở page mới nhất và chưa checked
             //( dành cho trường hợp isGoBack, Next đến Page mới nhất thì gán thành false)
-            if(isGoBack && indexPageCurrent == mapAnswers.Count)
+            if(isGoBack && indexPageCurrent == answers.Count)
                 isGoBack = false;
 
                             lbGoBack.Text = isGoBack.ToString();
@@ -396,6 +407,52 @@ namespace test.View
                 ResetControl(true);
             
             InitDataTests();
+            if(tests.Count-1==answers.Count)
+                btSubmit.Visible = true;
+        }
+
+        private void btSubmit_Click(object sender, EventArgs e)
+        {
+            //trường hợp ở page mới nhất và đã checked
+            if (indexPageCurrent == answers.Count && CheckChecked())
+                AddAns();
+
+            //kiểm tra xem điền hết đáp án chưa
+            if(tests.Count> answers.Count)
+            {
+                WarningMessage("You haven't finished the test yet");
+                return;
+            }
+
+            //sữa giá trị in isGoBack
+            if (isGoBack)
+                answers[indexPageCurrent] = GetCheckedAnswer();
+
+                            label4.Text = (answers.Count).ToString();
+                            label5.Text = indexPageCurrent.ToString();
+
+                            string s = "";
+                            foreach (AnsModel ans in answers)
+                            {
+                                s += $"{ans.AnsNumber} {ans.UserAns} {ans.AnsCorrect} {ans.RBSelected} |";
+                            }
+                            lbAns.Text = s;
+
+            answers.ForEach(ans =>
+            {
+                if (ans.UserAns == ans.AnsCorrect)
+                {
+                    point += 150;
+                }
+            });
+            messageBoxCus.Content=point.ToString();
+            messageBoxCus.InitModeFinish();
+            messageBoxCus.ShowDialog();
+
+            this.Close();
+
+            Main main= new Main();
+            main.ShowDialog();
         }
 
 
@@ -426,6 +483,6 @@ namespace test.View
 
 
 
- //////CLASS 
+        //////CLASS 
     }
 }

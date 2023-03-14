@@ -8,10 +8,10 @@ namespace test.Code
 {
     public class AnsModel
     {
+        private int ansNumber;
         private string userAns;
         private string ansCorrect;
         private string rBSelected;
-        private int id;
         public string UserAns
         {
             get { return userAns; }
@@ -27,14 +27,14 @@ namespace test.Code
             get { return rBSelected; }
             set { rBSelected = value; }
         }
-        public int Id
+        public int AnsNumber
         {
-            get { return id; }
-            set { id = value; }
+            get { return ansNumber; }
+            set { ansNumber = value; }
         }
-        public AnsModel(int id,string userAns, string ansCorrect, string rBSelected)
+        public AnsModel(int ansNumber, string userAns, string ansCorrect, string rBSelected)
         {
-            this.id = id;
+            this.ansNumber = ansNumber;
             this.userAns = userAns;
             this.ansCorrect = ansCorrect;
             this.rBSelected = rBSelected;

@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
@@ -16,6 +18,7 @@ namespace test.View
     {
         private bool ok;
         private bool modeCreate;
+        private string content;
 
 
         public MessageBoxCus()
@@ -26,6 +29,22 @@ namespace test.View
         {
             get { return ok; }
             set { ok = value; }
+        }
+        public string Content
+        {
+            set { lbContent.Text = value; 
+                  content=value;}
+        }
+        public void InitModeFinish()
+        {
+            ptFinish.Visible = true;
+            lbTitle.Text = "FINISH";
+            lbPoint.Visible = true;
+
+            lbTitle.ForeColor = ColorTranslator.FromHtml("#03C988");
+            lbPoint.Text = content;
+
+            ptError.Visible = false;
         }
         public void InitModeTimeOut()
         {
@@ -60,7 +79,6 @@ namespace test.View
             lbTitle.Text = "CONFIRM";
             lbTitle.ForeColor = ColorTranslator.FromHtml("#03C988");
             lbContent.ForeColor = ColorTranslator.FromHtml("#00dfc2");
-            tbnameFile.Visible = false;
 
             ptError.Visible = false;
             ptWarning.Visible = false;
@@ -71,13 +89,9 @@ namespace test.View
             lbTitle.Text = "WARNING";
             lbTitle.ForeColor = ColorTranslator.FromHtml("#FF3CAC");
             lbContent.ForeColor= ColorTranslator.FromHtml("#F16767");
-            tbnameFile.Visible = false;
             ptError.Visible = false;
         }
-        public string Content
-        {
-            set { lbContent.Text = value; }
-        }
+      
         private void btOk_Click(object sender, EventArgs e)
         {
             OK = true;
@@ -103,6 +117,7 @@ namespace test.View
                 {
                     fC.CreateDataToExcel(tbnameFile.Text);
                 }
+                tbnameFile.Visible = false;
             }
             this.Close();
 
@@ -112,13 +127,14 @@ namespace test.View
             lbTitle.Text = "ERROR";
             lbTitle.ForeColor = ColorTranslator.FromHtml("#DF2E38");
             lbContent.ForeColor = ColorTranslator.FromHtml("#DF2E38");
+            lbPoint.Visible = false;
 
             ptError.Visible = true;
             ptWarning.Visible = false;
             ptConfirm.Visible = false;
             ptExport.Visible = false;
-            
-            modeCreate= false;
+            ptFinish.Visible = false;
+            modeCreate = false;
         }
         private void btCancel_Click(object sender, EventArgs e)
         {
@@ -129,12 +145,17 @@ namespace test.View
             lbTitle.ForeColor = ColorTranslator.FromHtml("#DF2E38");
             lbContent.ForeColor = ColorTranslator.FromHtml("#DF2E38");
             lbTitle.Text = "ERROR";
+            lbTimeOut.Visible = false;
+            lbPoint.Visible = false;
 
             ptExport.Visible = false;
             ptError.Visible = true;
             ptWarning.Visible = false;
             ptConfirm.Visible = false;
             ptExport.Visible = false;
+            tbnameFile.Visible = false;
+            ptFinish.Visible = false;
+            ptError.Visible = false;
             modeCreate = false;
         }
     }

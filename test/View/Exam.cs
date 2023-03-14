@@ -30,6 +30,8 @@ namespace test.View
         private bool isGoBack = false;
         private int point = 0;
         private int totalPoint = 0;
+        private int minutes = 0; //= int.Parse(lbCountdown.Text.Substring(0, 2));
+        private int seconds = 60;// = int.Parse(lbCountdown.Text.Substring(5, 7));
 
         //Manager Model
         private List<TestModel> tests = new List<TestModel>();//list ques
@@ -40,7 +42,6 @@ namespace test.View
         private List<System.Windows.Forms.Label> arrLabel= new List<System.Windows.Forms.Label>();
         private List<Guna2GradientPanel> arrGradientPanel= new List<Guna2GradientPanel>();
         private List<Guna2CustomRadioButton> arrRadioButton = new List<Guna2CustomRadioButton>();
-
 
         public List<TestModel> Tests
         {
@@ -166,6 +167,10 @@ namespace test.View
 
         private void Exam_Load(object sender, EventArgs e)
         {
+            minutes = tests.Count - 1;//ví dụ 25 câu thì minute bắt đầu là 24 giây là 60=> 24:60
+            string timeText = (minutes+1).ToString("00") + " : 00" ;
+            lbCountdown.Text = timeText;
+
             btPrevious.Visible = false;
             btSubmit.Visible = false;
 
@@ -199,7 +204,7 @@ namespace test.View
             if (WarningMessage()==false)
                 return;
 
-            timer1.Stop();
+            timer1.Enabled=false;
             this.Close();
 
             Main main = new Main();
@@ -269,27 +274,29 @@ namespace test.View
                 }
             }
         }
+      
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int countdown = int.Parse(lbCountdown.Text.Substring(0, 2));
-            lbCountdown.Text = (countdown - 1).ToString() + " S";
+            seconds--;
 
-            if (countdown <= 30)
-            {
-                lbCountdown.ForeColor = ColorTranslator.FromHtml("#FFB84C");
-            }
-            if(countdown<= 15) {
-                lbCountdown.ForeColor = ColorTranslator.FromHtml("#DF2E38");
-            }
-            if (countdown == 0)
+            if (seconds == 0 && minutes == 0)
             {
                 ptCountdown.Visible = false;
-                lbCountdown.Visible=false;
-                timer1.Stop();
+                lbCountdown.Visible = false;
+                timer1.Enabled = false;
 
                 messageBoxCus.InitModeTimeOut();
                 messageBoxCus.ShowDialog();
             }
+            if (seconds == 0)
+            {
+                seconds = 59;
+                minutes--;
+            }
+
+            // "00" EX:minutes là 5, thì kết quả sau khi định dạng sẽ là chuỗi "05"
+            string timeText = minutes.ToString("00") + " : " + seconds.ToString("00");
+            lbCountdown.Text = timeText;
         }
         private void btPrevious_Click(object sender, EventArgs e)
         {
@@ -344,9 +351,6 @@ namespace test.View
         }
         private void btNext_Click(object sender, EventArgs e)
         {
-            lbCountdown.Text = "60 S";
-            ////////////
-           
             //sữa giá trị in isGoBack
             if(isGoBack)
                 answers[indexPageCurrent] = GetCheckedAnswer();
@@ -366,11 +370,14 @@ namespace test.View
             {
                 messageBoxCus.Content = "You haven't selected any option";
                 messageBoxCus.ShowDialog();
-
+                this.indexPageCurrent--;
                 return;
             }
-            
-                            label4.Text = (answers.Count).ToString();
+
+            if (!isGoBack)
+                lbCountdown.Text = "60 S";
+
+            label4.Text = (answers.Count).ToString();
                             label5.Text = indexPageCurrent.ToString();
 
                             string s = "";
@@ -408,7 +415,6 @@ namespace test.View
             if(tests.Count-1==answers.Count)
                 btSubmit.Visible = true;
         }
-
         private void btSubmit_Click(object sender, EventArgs e)
         {
             //trường hợp ở page mới nhất và đã checked
@@ -450,6 +456,7 @@ namespace test.View
 
             this.Close();
 
+            timer1.Enabled=false;
             Main main= new Main();
             main.ShowDialog();
         }

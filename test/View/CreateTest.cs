@@ -166,6 +166,7 @@ namespace test.View
                     questionsDtgv.DataSource = dt;
 
                 // Mở tệp Excel
+                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
                 using (ExcelPackage package = new ExcelPackage(linkFile))
                 {
                     ExcelWorksheet worksheet = package.Workbook.Worksheets["Sheet1"];//tạo đối tượng bảng tính worksheet
@@ -216,6 +217,7 @@ namespace test.View
 
             //Update in Excel
             // Mở tệp Excel
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             using (ExcelPackage package = new ExcelPackage(linkFile))
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets["Sheet1"];//tạo đối tượng bảng tính worksheet

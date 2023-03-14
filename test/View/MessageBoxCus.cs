@@ -155,7 +155,7 @@ namespace test.View
             ptExport.Visible = false;
             tbnameFile.Visible = false;
             ptFinish.Visible = false;
-            ptError.Visible = false;
+            ptError.Visible = true;
             modeCreate = false;
         }
     }

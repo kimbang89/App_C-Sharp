@@ -407,9 +407,8 @@
             this.lbCountdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(131)))), ((int)(((byte)(136)))));
             this.lbCountdown.Location = new System.Drawing.Point(86, 568);
             this.lbCountdown.Name = "lbCountdown";
-            this.lbCountdown.Size = new System.Drawing.Size(128, 63);
+            this.lbCountdown.Size = new System.Drawing.Size(0, 63);
             this.lbCountdown.TabIndex = 95;
-            this.lbCountdown.Text = "60 S";
             // 
             // ptCountdown
             // 
